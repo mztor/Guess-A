@@ -11,6 +11,7 @@
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
 		C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653F2863DBC90096852E /* Preview Assets.xcassets */; };
+		C089E2EE286524480098AB23 /* numberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089E2ED286524480098AB23 /* numberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C036653C2863DBC90096852E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C036653F2863DBC90096852E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C089E2ED286524480098AB23 /* numberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C03665382863DBC50096852E /* Guess_AApp.swift */,
 				C036653A2863DBC50096852E /* ContentView.swift */,
+				C089E2EC2865242A0098AB23 /* Number */,
 				C036653C2863DBC90096852E /* Assets.xcassets */,
 				C036653E2863DBC90096852E /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				C036653F2863DBC90096852E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C089E2EC2865242A0098AB23 /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				C089E2ED286524480098AB23 /* numberView.swift */,
+			);
+			path = Number;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C089E2EE286524480098AB23 /* numberView.swift in Sources */,
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,
 			);

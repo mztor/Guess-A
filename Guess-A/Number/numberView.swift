@@ -9,7 +9,14 @@ import SwiftUI
 
 struct numberView: View {
     var body: some View {
-        Text("Guess a number")
+        
+        VStack {
+            NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy") }
+                .padding()
+            NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard") }
+            
+        }
+        
     }
 }
 

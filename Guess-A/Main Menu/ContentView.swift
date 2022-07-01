@@ -40,15 +40,12 @@ struct ContentView: View {
             .navigationTitle("Guess-A")
             
             .toolbar {
-                Button("Help"){
+                Button("help") {
                     showHelp()
-                                }
+                        }
             }
-            
-            
+
         }
-
-
     }
 }
 struct BlueButton: ButtonStyle {

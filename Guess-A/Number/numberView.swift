@@ -13,7 +13,7 @@ struct numberView: View {
         VStack {
             HStack {
                     Spacer()
-                    Text("Choose your level")
+                    Text("Ms Tor was here")
                     .fontWeight(.bold)
                     Spacer()
             }

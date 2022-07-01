@@ -8,15 +8,31 @@
 import SwiftUI
 
 struct numberView: View {
+    
     var body: some View {
-        
         VStack {
+            HStack {
+                    Spacer()
+                    Text("Choose your level")
+                    .fontWeight(.bold)
+                    Spacer()
+            }
+                
             NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy") }
                 .padding()
+            
             NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard") }
+                .padding()
             
         }
         
+        .toolbar {
+            Button("Help"){
+                //show the help for Guess a number difficulty
+                            }
+        }
+        .padding()
+        .navigationTitle("Guess A Number")
     }
 }
 

@@ -16,7 +16,7 @@ struct ContentView: View {
             List{
 
                 NavigationLink(destination: numberView()) { Text("Guess a number") }
-                 
+                
                    
                 NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }
                 
@@ -38,7 +38,12 @@ struct ContentView: View {
 
 
             .navigationTitle("Guess-A")
-            .contentShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            
+            .toolbar {
+                Button("Help"){
+                    showHelp()
+                                }
+            }
             
             
         }

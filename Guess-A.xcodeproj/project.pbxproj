@@ -14,7 +14,7 @@
 		C089E2EE286524480098AB23 /* numberLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089E2ED286524480098AB23 /* numberLevels.swift */; };
 		C0A98C96286D6187006BC2FA /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A98C95286D6187006BC2FA /* ToolbarView.swift */; };
 		C0A98C98286DB8B1006BC2FA /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A98C97286DB8B1006BC2FA /* common.swift */; };
-		C0CC9A3B286BF2D800FF74C6 /* nbaTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A3A286BF2D800FF74C6 /* nbaTeamView.swift */; };
+		C0CC9A3B286BF2D800FF74C6 /* nbaTeamLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */; };
 		C0CC9A3D286BF30600FF74C6 /* playingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A3C286BF30600FF74C6 /* playingCardView.swift */; };
 		C0CC9A3F286BF31700FF74C6 /* pokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A3E286BF31700FF74C6 /* pokemonView.swift */; };
 		C0CC9A41286BF35100FF74C6 /* carBrandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A40286BF35100FF74C6 /* carBrandView.swift */; };
@@ -35,7 +35,7 @@
 		C089E2ED286524480098AB23 /* numberLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberLevels.swift; sourceTree = "<group>"; };
 		C0A98C95286D6187006BC2FA /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		C0A98C97286DB8B1006BC2FA /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
-		C0CC9A3A286BF2D800FF74C6 /* nbaTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nbaTeamView.swift; sourceTree = "<group>"; };
+		C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nbaTeamLevels.swift; sourceTree = "<group>"; };
 		C0CC9A3C286BF30600FF74C6 /* playingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playingCardView.swift; sourceTree = "<group>"; };
 		C0CC9A3E286BF31700FF74C6 /* pokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonView.swift; sourceTree = "<group>"; };
 		C0CC9A40286BF35100FF74C6 /* carBrandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carBrandView.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		C0CC9A39286BF2AF00FF74C6 /* NBA team */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC9A3A286BF2D800FF74C6 /* nbaTeamView.swift */,
+				C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */,
 			);
 			path = "NBA team";
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			files = (
 				C0CC9A3D286BF30600FF74C6 /* playingCardView.swift in Sources */,
 				C0CC9A45286BF3B200FF74C6 /* allBlacksPlayerView.swift in Sources */,
-				C0CC9A3B286BF2D800FF74C6 /* nbaTeamView.swift in Sources */,
+				C0CC9A3B286BF2D800FF74C6 /* nbaTeamLevels.swift in Sources */,
 				C0CC9A41286BF35100FF74C6 /* carBrandView.swift in Sources */,
 				C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */,
 				C089E2EE286524480098AB23 /* numberLevels.swift in Sources */,

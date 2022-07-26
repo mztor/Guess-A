@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct nbaTeamView: View {
+struct nbaTeamLevels: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +15,6 @@ struct nbaTeamView: View {
 
 struct nbaTeam_Previews: PreviewProvider {
     static var previews: some View {
-        nbaTeamView()
+        nbaTeamLevels()
     }
 }

@@ -31,7 +31,7 @@ struct ContentView: View {
                 NavigationLink(destination: fruitView()) { Text("Guess a Fruit") }
                 NavigationLink(destination: allBlacksPlayerView()) { Text("Guess a All Blacks Player") }
                 NavigationLink(destination: letterView()) { Text("Guess a Letter") }
-                NavigationLink(destination: dogBreedView()) { Text("Guess a Dog Breed") }
+                NavigationLink(destination: DogBreedLevels()) { Text("Guess a Dog Breed") }
 
             }
             

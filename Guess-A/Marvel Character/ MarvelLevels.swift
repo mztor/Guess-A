@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct marvelView: View {
+struct MarvelLevels: View {
     var body: some View { 
-        Text("Alexandra Was Here again")
+        Text("Alexandra Was Here")
     }
 }
 
-struct marvelView_Previews: PreviewProvider {
+struct MarvelLevels_Previews: PreviewProvider {
     static var previews: some View {
-        marvelView()
+        MarvelLevels()
     }
 }

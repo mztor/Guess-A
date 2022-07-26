@@ -22,7 +22,7 @@
 		C0CC9A45286BF3B200FF74C6 /* allBlacksPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */; };
 		C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A46286BF3C200FF74C6 /* letterView.swift */; };
 		C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */; };
-		C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */; };
+		C0CC9A4B286BF3DC00FF74C6 /*  MarvelLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */; };
 		C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A59286C699B00FF74C6 /* numberGame.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allBlacksPlayerView.swift; sourceTree = "<group>"; };
 		C0CC9A46286BF3C200FF74C6 /* letterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterView.swift; sourceTree = "<group>"; };
 		C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dogBreedView.swift; sourceTree = "<group>"; };
-		C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelView.swift; sourceTree = "<group>"; };
+		C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MarvelLevels.swift"; sourceTree = "<group>"; };
 		C0CC9A59286C699B00FF74C6 /* numberGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +114,7 @@
 		C0CC9A30286BF23500FF74C6 /* Marvel Character */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */,
+				C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */,
 			);
 			path = "Marvel Character";
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C0CC9A3F286BF31700FF74C6 /* pokemonView.swift in Sources */,
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
-				C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */,
+				C0CC9A4B286BF3DC00FF74C6 /*  MarvelLevels.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,
 				C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */,
 				C0CC9A43286BF3A300FF74C6 /* fruitView.swift in Sources */,

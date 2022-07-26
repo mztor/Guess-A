@@ -15,7 +15,7 @@ struct ContentView: View {
             
             List{
 
-                NavigationLink(destination: numberView()) { Text("Guess a number") }
+                NavigationLink(destination: numberLevels()) { Text("Guess a number") }
                 
                    
                 NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }

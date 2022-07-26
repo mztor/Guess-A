@@ -11,7 +11,7 @@
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
 		C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653F2863DBC90096852E /* Preview Assets.xcassets */; };
-		C089E2EE286524480098AB23 /* numberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089E2ED286524480098AB23 /* numberView.swift */; };
+		C089E2EE286524480098AB23 /* numberLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089E2ED286524480098AB23 /* numberLevels.swift */; };
 		C0A98C96286D6187006BC2FA /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A98C95286D6187006BC2FA /* ToolbarView.swift */; };
 		C0A98C98286DB8B1006BC2FA /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A98C97286DB8B1006BC2FA /* common.swift */; };
 		C0CC9A3B286BF2D800FF74C6 /* nbaTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A3A286BF2D800FF74C6 /* nbaTeamView.swift */; };
@@ -32,7 +32,7 @@
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C036653C2863DBC90096852E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C036653F2863DBC90096852E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C089E2ED286524480098AB23 /* numberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberView.swift; sourceTree = "<group>"; };
+		C089E2ED286524480098AB23 /* numberLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberLevels.swift; sourceTree = "<group>"; };
 		C0A98C95286D6187006BC2FA /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		C0A98C97286DB8B1006BC2FA /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		C0CC9A3A286BF2D800FF74C6 /* nbaTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nbaTeamView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		C089E2EC2865242A0098AB23 /* Number */ = {
 			isa = PBXGroup;
 			children = (
-				C089E2ED286524480098AB23 /* numberView.swift */,
+				C089E2ED286524480098AB23 /* numberLevels.swift */,
 				C0CC9A59286C699B00FF74C6 /* numberGame.swift */,
 			);
 			path = Number;
@@ -269,7 +269,7 @@
 				C0CC9A3B286BF2D800FF74C6 /* nbaTeamView.swift in Sources */,
 				C0CC9A41286BF35100FF74C6 /* carBrandView.swift in Sources */,
 				C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */,
-				C089E2EE286524480098AB23 /* numberView.swift in Sources */,
+				C089E2EE286524480098AB23 /* numberLevels.swift in Sources */,
 				C0A98C96286D6187006BC2FA /* ToolbarView.swift in Sources */,
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C0CC9A3F286BF31700FF74C6 /* pokemonView.swift in Sources */,

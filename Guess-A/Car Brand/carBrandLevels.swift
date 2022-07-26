@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct carBrandView: View {
+struct carBrandLevels: View {
     var body: some View {
         Text("Hello, Ben was here!")
     }
 }
 
-struct carBrandView_Previews: PreviewProvider {
+struct carBrandLevels_Previews: PreviewProvider {
     static var previews: some View {
-        carBrandView()
+        carBrandLevels()
     }
 }

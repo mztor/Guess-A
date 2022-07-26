@@ -18,7 +18,7 @@ struct ContentView: View {
                 NavigationLink(destination: numberLevels()) { Text("Guess a number") }
                 
                    
-                NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }
+                NavigationLink(destination: nbaTeamLevels()) { Text("Guess a NBA team") }
                 
 
                 NavigationLink(destination: playingCardView()) {Text("Guess a Playing Card") }

@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct numberView: View {
+struct numberLevels: View {
     
     var body: some View {
         VStack {
             HStack {
-                    Spacer()
-                    Text("Ms Tor was here")
-                    .fontWeight(.bold)
-                    Spacer()
+                Spacer()
+                Text("Ms Tor was here")
+                .fontWeight(.bold)
+                Spacer()
             }
                 
             NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy") }
@@ -36,8 +36,8 @@ struct numberView: View {
     }
 }
 
-struct numberView_Previews: PreviewProvider {
+struct numberLevels_Previews: PreviewProvider {
     static var previews: some View {
-        numberView()
+        numberLevels()
     }
 }

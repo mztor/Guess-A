@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E63EC4C2891F4F70069B734 /* MarvelGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E63EC4B2891F4F70069B734 /* MarvelGame.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E63EC4B2891F4F70069B734 /* MarvelGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelGame.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */,
+				5E63EC4B2891F4F70069B734 /* MarvelGame.swift */,
 			);
 			path = "Marvel Character";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
 				C0CC9A4B286BF3DC00FF74C6 /*  MarvelLevels.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,
+				5E63EC4C2891F4F70069B734 /* MarvelGame.swift in Sources */,
 				C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */,
 				C0CC9A43286BF3A300FF74C6 /* fruitView.swift in Sources */,
 				C0A98C98286DB8B1006BC2FA /* common.swift in Sources */,

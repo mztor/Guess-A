@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarvelLevels: View {
     var body: some View { 
-        Text("Alexandra Was Here Again")
+        Text("Alexandra Was Here Again more then 100 times")
     }
 }
 

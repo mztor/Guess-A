@@ -24,6 +24,7 @@
 		C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */; };
 		C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */; };
 		C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A59286C699B00FF74C6 /* numberGame.swift */; };
+		CB1463CA2891F2FD00FB1A2F /* pokemonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dogBreedView.swift; sourceTree = "<group>"; };
 		C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelView.swift; sourceTree = "<group>"; };
 		C0CC9A59286C699B00FF74C6 /* numberGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberGame.swift; sourceTree = "<group>"; };
+		CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C0CC9A3E286BF31700FF74C6 /* pokemonLevels.swift */,
+				CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */,
 				C0CC9A43286BF3A300FF74C6 /* fruitView.swift in Sources */,
 				C0A98C98286DB8B1006BC2FA /* common.swift in Sources */,
+				CB1463CA2891F2FD00FB1A2F /* pokemonGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

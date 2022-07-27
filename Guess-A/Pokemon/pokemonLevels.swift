@@ -10,12 +10,26 @@ import SwiftUI
 struct pokemonLevels: View {
     var body: some View {
         VStack {
-            Text("GUESS")
-                .padding(0.2)
-            Text("A")
-                .padding(0.2)
-            Text("POKÉMON")
-                .padding(0.2)
+            VStack {
+                Text("GUESS")
+                    .padding(0.2)
+                Text("A")
+                    .padding(0.2)
+                Text("POKÉMON")
+                    .padding(0.2)
+            }
+            .padding()
+            Text("Difficulty Selection")
+                .padding()
+            VStack {
+                NavigationLink(destination: pokemonGame()) {
+                    Text("Easy")
+                }
+                .padding()
+                NavigationLink(destination: pokemonGame()) {
+                    Text("Hard")
+                }
+            }
         }
     }
 }

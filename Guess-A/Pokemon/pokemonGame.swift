@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct pokemonGame: View {
+    var level: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        for _ in 1...3 {
+            Text(Int.random(in: 1...5))
+        }
     }
 }
 
 struct pokemonGame_Previews: PreviewProvider {
     static var previews: some View {
-        pokemonGame()
+        pokemonGame(level: "")
     }
 }

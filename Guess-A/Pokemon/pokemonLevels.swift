@@ -27,13 +27,13 @@ struct pokemonLevels: View {
                 RoundedRectangle(cornerRadius: 100, style: .continuous)
                     .frame(width: 160, height: 1)
                 VStack {
-                    NavigationLink(destination: pokemonGame()) {
+                    NavigationLink(destination: pokemonGame(level: "easy")) {
                         Text("Easy")
                             .foregroundColor(.black)
                             .background(RoundedRectangle(cornerRadius: 18).fill(Color.green).frame(width: 165, height: 50))
                     }
                     .padding(20)
-                    NavigationLink(destination: pokemonGame()) {
+                    NavigationLink(destination: pokemonGame(level: "hard")) {
                         Text("Hard")
                             .foregroundColor(.black)
                             .background(RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 165, height: 50))

@@ -9,9 +9,10 @@ import SwiftUI
 
 var randomNum = 0
 func randomNumGen() -> String {
-    randomNum = Int.random(in: 0...50)
+    randomNum = Int.random(in: 0...86)
     return numbered.pokedex[randomNum]
 }
+
 struct pokemonLevels: View {
     var body: some View {
         VStack {

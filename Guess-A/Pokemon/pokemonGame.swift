@@ -59,14 +59,44 @@ func typeSelect(answer: String) -> String{
         return ""
     }
 }
+struct submitButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(30)
+            .background(Color(red: 0, green: 0.6, blue: 1))
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+    }
+}
 struct pokemonGame: View {
     var level: String
     var correct: String
     @State private var guess = ""
+    @State private var showingIncorrectMessage = false
+    @State private var showingCorrectMessage = false
+    @Environment(\.presentationMode) var presentation
     var body: some View {
         Text(correct)
         Text("The Pokémon is a \(typeSelect(answer: correct)) type.")
+        .alert(isPresented: $showingIncorrectMessage) {
+            Alert(title: Text(""), message: Text("incorrect"), dismissButton: .default(Text("ok")))
+        }
         TextField("Who's that Pokémon", text: $guess)
+            .padding(20)
+        Button("Submit") {
+            if guess == correct {
+                showingCorrectMessage.toggle()
+            }
+            else {
+                showingIncorrectMessage.toggle()
+            }
+        }
+            .buttonStyle(submitButton())
+        .alert(isPresented: $showingCorrectMessage) {
+            Alert(title: Text(""), message: Text("correct"), dismissButton: .default(Text("ok"), action: {
+                self.presentation.wrappedValue.dismiss()
+            }))
+        }
             .toolbar {
                 Image(systemName: "questionmark.circle")
                     .foregroundColor(.blue)

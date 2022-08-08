@@ -9,7 +9,7 @@ import SwiftUI
 
 var randomNum = 0
 func randomNumGen() -> String {
-    randomNum = Int.random(in: 0...100)
+    randomNum = Int.random(in: 0...150)
     return numbered.pokedex[randomNum]
 }
 

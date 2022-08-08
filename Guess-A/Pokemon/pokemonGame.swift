@@ -59,6 +59,7 @@ func typeSelect(answer: String) -> String{
         return ""
     }
 }
+
 struct submitButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -82,6 +83,7 @@ struct pokemonGame: View {
     @State private var guess = ""
     @State private var showingIncorrectMessage = false
     @State private var showingCorrectMessage = false
+    @State private var showHelpMessage = false
     @Environment(\.presentationMode) var presentation
     var body: some View {
         Text("This Pokémon is a \(typeSelect(answer: correct)) type.")
@@ -92,6 +94,11 @@ struct pokemonGame: View {
             .padding(5)
             .border(.black, width: 2.0)
             .padding(15)
+            .alert(isPresented: $showingCorrectMessage) {
+                Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again"), action: {
+                    self.presentation.wrappedValue.dismiss()
+                }))
+            }
         Button("Submit") {
             if guess == correct {
                 showingCorrectMessage.toggle()
@@ -101,14 +108,16 @@ struct pokemonGame: View {
             }
         }
             .buttonStyle(submitButton())
-        .alert(isPresented: $showingCorrectMessage) {
-            Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again"), action: {
-                self.presentation.wrappedValue.dismiss()
-            }))
-        }
             .toolbar {
-                Image(systemName: "questionmark.circle")
+                Button() {
+                    showHelpMessage.toggle()
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
                     .foregroundColor(.blue)
+            }
+            .alert(isPresented: $showHelpMessage) {
+                Alert(title: Text("Help"), message: Text("Type into the textfield box to write your guess and then press submit to check your guess"), dismissButton: .default(Text("Ok")))
             }
     }
 }

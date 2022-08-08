@@ -68,9 +68,9 @@ struct submitButton: ButtonStyle {
             .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
-func tip(difficulty: String) -> String {
+func tip(difficulty: String, answer: String) -> String {
     if difficulty == "easy" {
-        return "tip"
+        return "Hint: the Pokémon is the \(longList.pokedex[answer]!) Pokémon"
     }
     else {
         return ""
@@ -84,10 +84,9 @@ struct pokemonGame: View {
     @State private var showingCorrectMessage = false
     @Environment(\.presentationMode) var presentation
     var body: some View {
-        Text(correct)
         Text("This Pokémon is a \(typeSelect(answer: correct)) type.")
         .alert(isPresented: $showingIncorrectMessage) {
-            Alert(title: Text("Incorrect!"), message: Text("Hint: the Pokémon is the \(tip(difficulty: level)) Pokémon"), dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Incorrect!"), message: Text(tip(difficulty: level, answer: correct)), dismissButton: .default(Text("Ok")))
         }
         TextField("Who's that Pokémon?", text: $guess)
             .padding(5)
@@ -103,7 +102,7 @@ struct pokemonGame: View {
         }
             .buttonStyle(submitButton())
         .alert(isPresented: $showingCorrectMessage) {
-            Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again?"), action: {
+            Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again"), action: {
                 self.presentation.wrappedValue.dismiss()
             }))
         }

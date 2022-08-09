@@ -34,12 +34,20 @@ struct nbaTeamLevels: View {
                 
                 NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy")
                     .foregroundColor(Color.black) }
-                    .padding()
+                .padding()
+                .overlay(
+                RoundedRectangle(cornerRadius: 2)
+                .stroke(.blue, lineWidth: 4)
+                    )
                 
                 
                 NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard")
                     .foregroundColor(Color.black) }
                     .padding()
+                .overlay(
+                RoundedRectangle(cornerRadius: 2)
+                    .stroke(.red, lineWidth: 4)
+                        )
                 
                 
                 

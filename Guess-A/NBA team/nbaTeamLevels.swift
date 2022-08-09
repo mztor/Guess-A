@@ -30,6 +30,21 @@ struct nbaTeamLevels: View {
                 Text("Difficulty Selection")
                 
             }
+            VStack{
+                
+                NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy")
+                    .foregroundColor(Color.black) }
+                    .padding()
+                
+                
+                NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard")
+                    .foregroundColor(Color.black) }
+                    .padding()
+                
+                
+                
+                
+            }
             
             
             
@@ -50,6 +65,6 @@ struct nbaTeamLevels: View {
 struct nbaTeam_Previews: PreviewProvider {
     static var previews: some View {
         nbaTeamLevels()
-            .frame(width: 0.0, height: 0.0)
+           
     }
 }

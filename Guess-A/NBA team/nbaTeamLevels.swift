@@ -24,6 +24,7 @@ struct nbaTeamLevels: View {
             Image("bball")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .padding(.vertical)
                 .frame(width: 150)
         }
             VStack{
@@ -32,7 +33,7 @@ struct nbaTeamLevels: View {
             }
             VStack{
                 
-                NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy")
+                NavigationLink(destination: nbaTeamGame(level: "Easy")) { Text("Easy")
                     .foregroundColor(Color.black) }
                 .padding()
                 .overlay(
@@ -41,7 +42,7 @@ struct nbaTeamLevels: View {
                     )
                 
                 
-                NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard")
+                NavigationLink(destination: nbaTeamGame(level: "Hard")) { Text("Hard")
                     .foregroundColor(Color.black) }
                     .padding()
                 .overlay(

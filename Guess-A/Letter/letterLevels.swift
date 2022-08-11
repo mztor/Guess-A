@@ -10,20 +10,35 @@ import SwiftUI
 struct letterLevels: View {
     var body: some View {
         VStack {
-            HStack {
-                NavigationLink(destination: numberGame(level: "Easy")) { Text("Easy") }
-                .padding()
-                NavigationLink(destination: numberGame(level: "Hard")) { Text("Hard") }
-                .padding()
+            VStack {
+                NavigationLink(destination: letterGame(level: "Easy")) {
+                    //takes the user to the Easy level
+                    Text ("Easy")
+                    .font(.title)
+                    }
+                    .padding()
+                    .foregroundColor(.green)
+                NavigationLink(destination: letterGame(level: "Medium")) { //takes the user to the Medium level
+                    Text("Medium")
+                    .font(.title)
+                    }
+                    .padding()
+                    .foregroundColor(.blue)
+                NavigationLink(destination: letterGame(level: "Hard")) {
+                    //takes the user to the Hard level
+                    Text("Hard")
+                    .font(.title)
+                    }
+                    .padding()
+                    .foregroundColor(.red)
             }
+            .navigationBarTitle("Guess-A-Letter")
         }
         .toolbar {
             Button("Help"){
-                //show the help for Guess a number difficulty
+                showHelp() //show the help for Guess a number difficulty
             }
         }
-        .padding()
-        .navigationTitle("Guess A Number")
     }
 }
  

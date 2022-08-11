@@ -40,7 +40,7 @@ struct ContentView: View {
             .navigationTitle("Guess-A")
             
             .toolbar {
-                Button("help") {
+                Button("Help") {
                     showHelp()
                         }
             }

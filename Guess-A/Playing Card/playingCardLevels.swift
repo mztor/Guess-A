@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct playingCardView: View {
+struct playingCardLevels: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct playingCardView_Previews: PreviewProvider {
+struct playingCardLevels_Previews: PreviewProvider {
     static var previews: some View {
-        playingCardView()
+        playingCardLevels()
     }
 }

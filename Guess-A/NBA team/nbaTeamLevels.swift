@@ -12,12 +12,15 @@ struct nbaTeamLevels: View {
         VStack{
             VStack{Text("Guess")
                     .font(.largeTitle)
+                    .fontWeight(.heavy)
                     .padding(0.2)
                 Text("a")
                     .font(.largeTitle)
+                    .fontWeight(.heavy)
                     .padding(0.2)
                 Text("NBA Team")
                     .font(.largeTitle)
+                    .fontWeight(.heavy)
                     .padding(0.2)
             }
         VStack{
@@ -29,6 +32,7 @@ struct nbaTeamLevels: View {
         }
             VStack{
                 Text("Difficulty Selection")
+                    .fontWeight(.bold)
                 
             }
             VStack{
@@ -68,6 +72,10 @@ struct nbaTeamLevels: View {
             
         }
         .padding()
+        .toolbar {
+            Button("Help"){
+                showHelp()
+                            }
     }
 }
 
@@ -76,4 +84,5 @@ struct nbaTeam_Previews: PreviewProvider {
         nbaTeamLevels()
            
     }
+}
 }

@@ -15,9 +15,10 @@ struct letterLevels: View {
                     //takes the user to the Easy level
                     Text ("Easy")
                     .font(.title)
+                    .foregroundColor(.green)
+                    .background(RoundedRectangle(cornerRadius: 20).frame(width: 100, height: 50))
                     }
                     .padding()
-                    .foregroundColor(.green)
                 NavigationLink(destination: letterGame(level: "Medium")) { //takes the user to the Medium level
                     Text("Medium")
                     .font(.title)

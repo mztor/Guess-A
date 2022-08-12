@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E63EC4C2891F4F70069B734 /* MarvelGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E63EC4B2891F4F70069B734 /* MarvelGame.swift */; };
+		5E63EC4C2891F4F70069B734 /* marvelGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E63EC4B2891F4F70069B734 /* marvelGame.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
@@ -23,12 +23,12 @@
 		C0CC9A45286BF3B200FF74C6 /* allBlacksPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */; };
 		C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A46286BF3C200FF74C6 /* letterView.swift */; };
 		C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */; };
-		C0CC9A4B286BF3DC00FF74C6 /*  MarvelLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */; };
+		C0CC9A4B286BF3DC00FF74C6 /*  marvelLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */; };
 		C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A59286C699B00FF74C6 /* numberGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E63EC4B2891F4F70069B734 /* MarvelGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelGame.swift; sourceTree = "<group>"; };
+		5E63EC4B2891F4F70069B734 /* marvelGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelGame.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allBlacksPlayerView.swift; sourceTree = "<group>"; };
 		C0CC9A46286BF3C200FF74C6 /* letterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterView.swift; sourceTree = "<group>"; };
 		C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dogBreedView.swift; sourceTree = "<group>"; };
-		C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MarvelLevels.swift"; sourceTree = "<group>"; };
+		C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " marvelLevels.swift"; sourceTree = "<group>"; };
 		C0CC9A59286C699B00FF74C6 /* numberGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +116,8 @@
 		C0CC9A30286BF23500FF74C6 /* Marvel Character */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC9A4A286BF3DC00FF74C6 /*  MarvelLevels.swift */,
-				5E63EC4B2891F4F70069B734 /* MarvelGame.swift */,
+				C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */,
+				5E63EC4B2891F4F70069B734 /* marvelGame.swift */,
 			);
 			path = "Marvel Character";
 			sourceTree = "<group>";
@@ -277,9 +277,9 @@
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C0CC9A3F286BF31700FF74C6 /* pokemonView.swift in Sources */,
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
-				C0CC9A4B286BF3DC00FF74C6 /*  MarvelLevels.swift in Sources */,
+				C0CC9A4B286BF3DC00FF74C6 /*  marvelLevels.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,
-				5E63EC4C2891F4F70069B734 /* MarvelGame.swift in Sources */,
+				5E63EC4C2891F4F70069B734 /* marvelGame.swift in Sources */,
 				C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */,
 				C0CC9A43286BF3A300FF74C6 /* fruitView.swift in Sources */,
 				C0A98C98286DB8B1006BC2FA /* common.swift in Sources */,

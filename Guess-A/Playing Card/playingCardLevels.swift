@@ -38,7 +38,7 @@ struct playingCardLevels: View {
                     .frame(width: 240, height: 3)
                     .padding(0.4)
                 Spacer()
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardBeginner()) {
                     Text("Beginner")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -46,7 +46,7 @@ struct playingCardLevels: View {
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
                 }
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardGambler()) {
                     Text("Gambler")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -54,7 +54,7 @@ struct playingCardLevels: View {
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
                 }
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardPsychic()) {
                     Text("Psychic")
                         .font(.title2)
                         .fontWeight(.heavy)

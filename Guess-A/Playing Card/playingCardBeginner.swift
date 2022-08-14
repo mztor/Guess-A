@@ -1,20 +1,20 @@
 //
-//  playingCardGame.swift
+//  playingCardGame2.swift
 //  Guess-A
 //
-//  Created by Joel Braatz on 12/8/2022.
+//  Created by Joel Braatz on 14/8/2022.
 //
 
 import SwiftUI
 
-struct playingCardGambler: View {
+struct playingCardBeginner: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct playingCardGambler_Previews: PreviewProvider {
+struct playingCardBeginner_Previews: PreviewProvider {
     static var previews: some View {
-        playingCardGambler()
+        playingCardBeginner()
     }
 }

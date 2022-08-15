@@ -59,6 +59,7 @@ func typeSelect(answer: String) -> String{
         return ""
     }
 }
+// Checks which type the correct Pokémon belongs to
 
 struct submitButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -69,15 +70,20 @@ struct submitButton: ButtonStyle {
             .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
-func tip(difficulty: String, answer: String) -> String {
+// Creates the style for the submit button
+
+func tip(difficulty: String, answerAgain: String) -> String {
     if difficulty == "easy" {
-        return "Hint: the Pokémon is the \(longList.pokedex[answer]!) Pokémon"
+        return "Hint: the Pokémon is the \(longList.pokedex[answerAgain]!) Pokémon"
     }
     else {
         return ""
     }
 }
+// Provides the hint message which includes the species name of the correct Pokémon
+
 struct pokemonGame: View {
+    
     var level: String
     var correct: String
     @State private var guess = ""
@@ -85,20 +91,30 @@ struct pokemonGame: View {
     @State private var showingCorrectMessage = false
     @State private var showHelpMessage = false
     @Environment(\.presentationMode) var presentation
+    
     var body: some View {
+        
         Text("This Pokémon is a \(typeSelect(answer: correct)) type.")
+        // Creates the initial hint
+        
         .alert(isPresented: $showingIncorrectMessage) {
-            Alert(title: Text("Incorrect!"), message: Text(tip(difficulty: level, answer: correct)), dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Incorrect!"), message: Text(tip(difficulty: level, answerAgain: correct)), dismissButton: .default(Text("Ok")))
         }
+       // Alert for incorrect guess and tip
+        
         TextField("Who's that Pokémon?", text: $guess)
             .padding(5)
             .border(.black, width: 2.0)
             .padding(15)
+        // Creates the initial hint
+            
             .alert(isPresented: $showingCorrectMessage) {
                 Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again"), action: {
                     self.presentation.wrappedValue.dismiss()
                 }))
             }
+        // Alert for correct guess
+        
         Button("Submit") {
             if guess == correct {
                 showingCorrectMessage.toggle()
@@ -107,7 +123,10 @@ struct pokemonGame: View {
                 showingIncorrectMessage.toggle()
             }
         }
+        // Creates the submit button for when users want to submit their answers
+        
             .buttonStyle(submitButton())
+        
             .toolbar {
                 Button() {
                     showHelpMessage.toggle()
@@ -116,14 +135,21 @@ struct pokemonGame: View {
                 }
                     .foregroundColor(.blue)
             }
+        // Creates the button that causes online help to appear
+        
             .alert(isPresented: $showHelpMessage) {
                 Alert(title: Text("Help"), message: Text("Type into the textfield box to write your guess and then press submit to check your guess"), dismissButton: .default(Text("Ok")))
             }
+        // Alert for online help
+        
     }
 }
 
 struct pokemonGame_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         pokemonGame(level: "", correct: "")
+        
     }
 }

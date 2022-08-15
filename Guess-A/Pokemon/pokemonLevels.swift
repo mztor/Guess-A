@@ -66,6 +66,12 @@ struct pokemonLevels: View {
                 
             }
             .padding(.vertical, 80)
+            .toolbar {
+                NavigationLink(destination: pokemonTesting(correct: randomNumGen())) {
+                    Image(systemName: "t.square")
+                }
+                    .foregroundColor(.blue)
+            }
             
             
         }

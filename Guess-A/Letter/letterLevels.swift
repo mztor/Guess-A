@@ -15,24 +15,27 @@ struct letterLevels: View {
                     //takes the user to the Easy level
                     Text ("Easy")
                     .font(.title)
-                    .foregroundColor(.green)
-                    .background(RoundedRectangle(cornerRadius: 20).frame(width: 100, height: 50))
-                    }
                     .padding()
-                NavigationLink(destination: letterGame(level: "Medium")) { //takes the user to the Medium level
+                    .foregroundColor(.green)
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(.green, lineWidth: 2))
+                }
+                NavigationLink(destination: letterGame(level: "Medium")) {
+                    //takes the user to the Medium level
                     Text("Medium")
                     .font(.title)
-                    }
                     .padding()
                     .foregroundColor(.blue)
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(.blue, lineWidth: 2))
+                }
                 NavigationLink(destination: letterGame(level: "Hard")) {
                     //takes the user to the Hard level
                     Text("Hard")
                     .font(.title)
-                    }
                     .padding()
                     .foregroundColor(.red)
-            }
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(.red, lineWidth: 2))
+                }
+           }
             .navigationBarTitle("Guess-A-Letter")
         }
         .toolbar {

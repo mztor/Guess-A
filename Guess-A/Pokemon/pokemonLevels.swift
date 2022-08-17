@@ -42,21 +42,21 @@ struct pokemonLevels: View {
                 
                 Text("Difficulty Selection")
                 RoundedRectangle(cornerRadius: 100, style: .continuous)
-                    .frame(width: 160, height: 1)
+                    .frame(width: 160, height: 3)
                 
                 VStack {
                     
                     NavigationLink(destination: pokemonGame(level: "easy", correct: randomNumGen())) {
                         Text("Easy")
-                            .foregroundColor(.black)
-                            .background(RoundedRectangle(cornerRadius: 18).fill(Color.green).frame(width: 165, height: 50))
+                            .foregroundColor(.green)
+                            .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                     }
                     .padding(20)
                     
                     NavigationLink(destination: pokemonGame(level: "hard", correct: randomNumGen())) {
                         Text("Hard")
-                            .foregroundColor(.black)
-                            .background(RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 165, height: 50))
+                            .foregroundColor(.red)
+                            .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                     }
                     .padding(20)
                     

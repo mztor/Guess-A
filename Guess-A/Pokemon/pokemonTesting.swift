@@ -19,8 +19,10 @@ struct pokemonTesting: View {
     @State private var showingCorrectMessage = false
     @State private var showHelpMessage = false
     @Environment(\.presentationMode) var presentation
+    @State var scoreAgain: Int = 1
+    
     var body: some View {
-        Text("This Pokémon is a \(correct) ")
+        Text("This Pokémon is \(correct) ")
         // Shows the Pokémon
         
         .alert(isPresented: $showingIncorrectMessage) {
@@ -35,7 +37,7 @@ struct pokemonTesting: View {
         // Creates the initial hint
             
             .alert(isPresented: $showingCorrectMessage) {
-                Alert(title: Text("Correct!"), message: Text(""), dismissButton: .default(Text("Play Again"), action: {
+                Alert(title: Text("Correct!"), message: Text("Score: \(scoreAgain)"), dismissButton: .default(Text("Play Again"), action: {
                     self.presentation.wrappedValue.dismiss()
                 }))
             }
@@ -47,7 +49,8 @@ struct pokemonTesting: View {
             }
             else {
                 showingIncorrectMessage.toggle()
-            }
+                self.scoreAgain += 1
+                }
         }
         // Creates the submit button for when users want to submit their answers
         

@@ -22,7 +22,9 @@ struct nbaTeamLevels: View {
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .padding(0.2)
+            
             }
+            Spacer()
         VStack{
             Image("bball")
                 .resizable()
@@ -30,11 +32,15 @@ struct nbaTeamLevels: View {
                 .padding(.vertical)
                 .frame(width: 150)
         }
+            Spacer()
             VStack{
                 Text("Difficulty Selection")
-                    .fontWeight(.bold)
+                RoundedRectangle(cornerRadius: 100, style: .continuous)
+                    .frame(width: 160, height: 3.627)
                 
             }
+            Spacer()
+            Spacer()
             VStack{
                 
                 NavigationLink(destination: nbaTeamGame(level: "Easy")) { Text("Easy")

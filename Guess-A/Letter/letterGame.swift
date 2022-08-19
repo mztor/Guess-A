@@ -55,6 +55,12 @@ struct letterGame: View {
                             caption = "Play again"
                         }
                         guesses = guesses + "\n" + guess
+                        
+                        if score == 0 {
+                            message = ("Wrong! You're out of guesses")
+                            caption = "Play again"
+                        }
+                        
                         showingAlert.toggle()
                         guess = ""
                     }

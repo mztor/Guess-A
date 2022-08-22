@@ -8,11 +8,14 @@
 import SwiftUI
 
 func tipAgain(answerAgain: String) -> String {
+    
     return "Hint: the Pokémon is the \(longList.pokedex[answerAgain]!) Pokémon"
+    
 }
 // Provides the hint message which includes the species name of the correct Pokémon
 
 struct pokemonTesting: View {
+    
     var correct: String
     @State private var guess = ""
     @State private var showingIncorrectMessage = false
@@ -22,11 +25,14 @@ struct pokemonTesting: View {
     @State var scoreAgain: Int = 1
     
     var body: some View {
+        
         Text("This Pokémon is \(correct) ")
         // Shows the Pokémon
         
         .alert(isPresented: $showingIncorrectMessage) {
+            
             Alert(title: Text("Incorrect!"), message: Text(tipAgain(answerAgain: correct)), dismissButton: .default(Text("Ok")))
+            
         }
        // Alert for incorrect guess and tip
         
@@ -34,22 +40,31 @@ struct pokemonTesting: View {
             .padding(5)
             .border(.black, width: 2.0)
             .padding(15)
-        // Creates the initial hint
+        // Creates the textfield which will recieve the user's guess
             
             .alert(isPresented: $showingCorrectMessage) {
+                
                 Alert(title: Text("Correct!"), message: Text("Score: \(scoreAgain)"), dismissButton: .default(Text("Play Again"), action: {
                     self.presentation.wrappedValue.dismiss()
                 }))
+                
             }
         // Alert for correct guess
         
         Button("Submit") {
-            if guess == correct {
+            
+            if guess.lowercased() == correct.lowercased() {
+                
                 showingCorrectMessage.toggle()
+                
             }
+            
             else {
+                
                 showingIncorrectMessage.toggle()
+                
                 self.scoreAgain += 1
+                
                 }
         }
         // Creates the submit button for when users want to submit their answers
@@ -57,17 +72,24 @@ struct pokemonTesting: View {
             .buttonStyle(submitButton())
         
             .toolbar {
+                
                 Button() {
+                    
                     showHelpMessage.toggle()
+                    
                 } label: {
+                    
                     Image(systemName: "questionmark.circle")
+                    
                 }
                     .foregroundColor(.blue)
             }
         // Creates the button that causes online help to appear
         
             .alert(isPresented: $showHelpMessage) {
+                
                 Alert(title: Text("Help"), message: Text("Type into the textfield box to write your guess and then press submit to check your guess"), dismissButton: .default(Text("Ok")))
+                
             }
         // Alert for online help
         
@@ -75,7 +97,10 @@ struct pokemonTesting: View {
 }
 
 struct pokemonTesting_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         pokemonTesting(correct: "")
+        
     }
 }

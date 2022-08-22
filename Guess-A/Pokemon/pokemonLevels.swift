@@ -8,9 +8,13 @@
 import SwiftUI
 
 var randomNum = 0
+
 func randomNumGen() -> String {
+    
     randomNum = Int.random(in: 0...150)
+    
     return numbered.pokemon[randomNum]
+    
 }
 // Generates a random number that then indexes the Pokémon of that number and provides it
 
@@ -72,6 +76,8 @@ struct pokemonLevels: View {
                 }
                     .foregroundColor(.blue)
             }
+            // Takes user to testing mode
+            
             
             
         }

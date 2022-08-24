@@ -33,7 +33,10 @@ struct letterGame: View {
                     
                 
                     Button("Check guess") {
-                        if level == "Easy" && guess > random {
+                        if guess == random {
+                            message = ("Correct! You finished with a score of: \(score)")
+                            caption = "Play again" //this message congradulates the user
+                        } else if level == "Easy" && guess > random {
                             message = ("Wrong! The actual letter is: closer to 'a'")
                             score = score - 1 //checks if the user is in the 'Easy' level, and is too far up the alphabet
                         } else if level == "Easy" && guess < random {
@@ -48,12 +51,10 @@ struct letterGame: View {
                         } else if level == "Hard" && guess != random {
                             message = ("Wrong!")
                             score = score - 1 //checks if the user is in the 'Hard' level, and is wrong
-                        } else if guess == "" {
-                            message = ("Make sure you enter a letter!") //stops the program deducting a point for an empty text field (if the button is pressed by accident)
                         } else {
-                            message = ("Correct! You finished with a score of: \(score)")
-                            caption = "Play again" //all other guesses thereofre have to be correct, so this message congradulates the user
+                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for an empty text field of an invalid guess
                         }
+                        
                         guesses = guesses + "\n" + guess
                         
                         if score == 0 { //checks if the user is out of guesses

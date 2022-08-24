@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct letterGame: View {
-    @State private var guess = ""
+    @State private var guess = "" //creates an empty variable for the user's guess
     @State private var showingAlert = false
     var level:String
     @State private var message = ""
     @State private var guesses = ""
     @State private var caption = "OK"
-    @State var random = ""
+    @State var random = "" //creates an empty variable for the program's random letter
     @Environment(\.presentationMode) var presentation
-    @State var arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    @State var score = 0
+    @State var arrLetters = [""] //creates an empty array of possible letters to guess
+    @State var score = 0 //sets up the user's score
     @State var startScore = 0
     var body: some View {
         NavigationView {
             Form {
                 VStack {
-                    Text("\(random) \(score)/\(startScore)")
-                    TextField("Guess", text:$guess)
+                    Text("\(random) \(score)/\(startScore)") //displays the user's remaining guesses out of their total allowed guesses
+                    TextField("Guess", text:$guess) //creates the text field for user input
                         .font(.system(size: 25))
                         .multilineTextAlignment(.center)
                         .autocapitalization(.none)
@@ -35,28 +35,28 @@ struct letterGame: View {
                     Button("Check guess") {
                         if level == "Easy" && guess > random {
                             message = ("Wrong! The actual letter is: closer to 'a'")
-                            score = score - 1
+                            score = score - 1 //checks if the user is in the 'Easy' level, and is too far up the alphabet
                         } else if level == "Easy" && guess < random {
                             message = ("Wrong! The actual letter is: closer to 'z'")
-                            score = score - 1
+                            score = score - 1 //checks if the user is in the 'Easy' level, and is too far down the alphabet
                         } else if level == "Medium" && guess > random {
                             message = ("Wrong! The actual letter is closer to 'a' AND/OR is lowercase")
-                            score = score - 1
+                            score = score - 1 //checks if the user is in the 'Medium' level, and is too far up the alphabet
                         } else if level == "Medium" && guess < random {
                             message = ("Wrong! The actual letter is closer to 'z' AND/OR is uppercase")
-                            score = score - 1
+                            score = score - 1 //checks if the user is in the 'Medium' level, and is too far down the alphabet
                         } else if level == "Hard" && guess != random {
                             message = ("Wrong!")
-                            score = score - 1
+                            score = score - 1 //checks if the user is in the 'Hard' level, and is wrong
                         } else if guess == "" {
-                            message = ("Make sure you enter a letter!")
+                            message = ("Make sure you enter a letter!") //stops the program deducting a point for an empty text field (if the button is pressed by accident)
                         } else {
                             message = ("Correct! You finished with a score of: \(score)")
-                            caption = "Play again"
+                            caption = "Play again" //all other guesses thereofre have to be correct, so this message congradulates the user
                         }
                         guesses = guesses + "\n" + guess
                         
-                        if score == 0 {
+                        if score == 0 { //checks if the user is out of guesses
                             message = ("Wrong! You're out of guesses")
                             caption = "Play again"
                         }
@@ -68,11 +68,11 @@ struct letterGame: View {
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(.blue, lineWidth: 2))
                     .foregroundColor(.black)
                     
-                    Text(guesses)
+                    Text(guesses) //displays all the user's past guesses in the round
                 }
             }
         }
-        .alert(isPresented: $showingAlert) {
+        .alert(isPresented: $showingAlert) { //creates an alert
             Alert(
                 title: Text(""),
                 message: Text(message),
@@ -85,11 +85,11 @@ struct letterGame: View {
         }
         .navigationTitle(level)
         .onAppear() {
-            if level == "Easy" {
-                arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-                random = arrLetters.randomElement()!
-                score = 15
-                startScore = 15
+            if level == "Easy" { //sets up the specifics for the 'Easy' level
+                arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] //posible answers
+                random = arrLetters.randomElement()! //picks a random letter
+                score = 15 //keeps track of the user's score
+                startScore = 15 //allows the start score to be displayed at the top of the screen
             } else if level == "Medium" {
                 arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T", "U", "V", "W", "X", "Y", "Z"]
                 random = arrLetters.randomElement()!

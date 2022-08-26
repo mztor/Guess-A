@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct nbaTeamLevels: View {
+    @State private var showHelpCard = false
     var body: some View {
         VStack{
             VStack{Text("Guess")
@@ -79,11 +80,20 @@ struct nbaTeamLevels: View {
         }
         .padding()
         .toolbar {
-            NavigationLink(destination: helpScreen())
-            {
-                showHelp()
+            Button() {
+                showHelpCard.toggle()
             } label: {
                 Image(systemName: "questionmark.circle")
+            }
+            .alert(isPresented: $showHelpCard) {Alert(title: Text("Help!"), message: Text("*Choose the desired difficulty located under 'Difficulty Selection'."),
+                message:Text("."),
+                message:Text("."),
+                
+                                                      
+                                                      
+                dismissButton:
+                    .default(Text("Ok")))
+                
             }
     }
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct playingCardLevels: View {
+    @State private var showHelpCard = false
     var body: some View {
         VStack {
             VStack {
@@ -38,7 +39,7 @@ struct playingCardLevels: View {
                     .frame(width: 240, height: 3)
                     .padding(0.4)
                 Spacer()
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardGame(level: "Beginner")) {
                     Text("Beginner")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -46,7 +47,7 @@ struct playingCardLevels: View {
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
                 }
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardGame(level: "Gambler")) {
                     Text("Gambler")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -54,7 +55,7 @@ struct playingCardLevels: View {
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
                 }
-                NavigationLink(destination: playingCardGame()) {
+                NavigationLink(destination: playingCardGame(level: "Psychic")) {
                     Text("Psychic")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -63,6 +64,16 @@ struct playingCardLevels: View {
                         .padding()
                 }
                 Spacer()
+            }
+        }
+        .toolbar {
+            Button() {
+                showHelpCard.toggle()
+            } label: {
+                Image(systemName: "questionmark.circle")
+            }
+            .alert(isPresented: $showHelpCard) {
+                Alert(title: Text("Help!"), message: Text("Select one of the difficulty buttons below to start the game!"), dismissButton: .default(Text("Ok")))
             }
         }
     }

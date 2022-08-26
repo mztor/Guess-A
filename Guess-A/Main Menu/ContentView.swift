@@ -40,9 +40,11 @@ struct ContentView: View {
             .navigationTitle("Guess-A")
             
             .toolbar {
-                Button("help") {
+                Button() {
                     showHelp()
-                        }
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
             }
 
         }

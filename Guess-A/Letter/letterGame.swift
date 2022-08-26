@@ -29,7 +29,7 @@ struct letterGame: View {
                         .multilineTextAlignment(.center)
                         .autocapitalization(.none)
                         .padding()
-                        .keyboardType(.default)
+                        .keyboardType(.alphabet) //restricts the keyboard to letters only
                     
                 
                     Button("Check guess") {
@@ -43,10 +43,10 @@ struct letterGame: View {
                             message = ("Wrong! The actual letter is: closer to 'z'")
                             score = score - 1 //checks if the user is in the 'Easy' level, and is too far down the alphabet
                         } else if level == "Medium" && guess > random {
-                            message = ("Wrong! The actual letter is closer to 'a' AND/OR is lowercase")
+                            message = ("Wrong! The actual letter is closer to 'a' AND/OR is upper")
                             score = score - 1 //checks if the user is in the 'Medium' level, and is too far up the alphabet
                         } else if level == "Medium" && guess < random {
-                            message = ("Wrong! The actual letter is closer to 'z' AND/OR is uppercase")
+                            message = ("Wrong! The actual letter is closer to 'z' AND/OR is lowercase")
                             score = score - 1 //checks if the user is in the 'Medium' level, and is too far down the alphabet
                         } else if level == "Hard" && guess != random {
                             message = ("Wrong!")
@@ -103,7 +103,6 @@ struct letterGame: View {
                 startScore = 60
             }
         }
-        .background(Color.white)
     }
 }
 

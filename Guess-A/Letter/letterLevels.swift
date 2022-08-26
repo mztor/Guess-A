@@ -8,6 +8,7 @@
 import SwiftUI
  
 struct letterLevels: View {
+    @State private var showingPopover = false
     var body: some View {
         VStack {
             VStack {
@@ -39,8 +40,15 @@ struct letterLevels: View {
             .navigationBarTitle("Guess-A-Letter")
         }
         .toolbar {
-            Button("Help"){
-                showHelp() //show the help for Guess a number difficulty
+            Button(action: {
+                showingPopover = true
+            }) {
+            Image(systemName: "questionmark.circle")
+                .popover(isPresented: $showingPopover) {
+                    Text("Ensure you enter a valid guess (no numbers, punctuation, emojis, or special characters like an exclamation mark). \n \n Valid guesses will change depending on level, with Easy choosing a letter between 'a' and 'z', Medium between 'a' and 'Z', and Hard being any letter (including accented and captial letters).")
+                        .font(.headline)
+                        .padding()
+                }
             }
         }
     }

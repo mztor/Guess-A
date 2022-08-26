@@ -79,11 +79,14 @@ struct nbaTeamLevels: View {
         }
         .padding()
         .toolbar {
-            Button("Help"){
+            NavigationLink(destination: helpScreen())
+            {
                 showHelp()
-                            }
+            } label: {
+                Image(systemName: "questionmark.circle")
+            }
     }
-}
+    }
 
 struct nbaTeam_Previews: PreviewProvider {
     static var previews: some View {

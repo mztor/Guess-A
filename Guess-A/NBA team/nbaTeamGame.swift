@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-var randomNum = 1
+var randomNum1 = 1
+var randomNum2 = 2
+var randomNum3 = 3
 
 struct nbaTeamGame: View {
     var level: String
@@ -17,20 +19,44 @@ struct nbaTeamGame: View {
         VStack{
             Text("Guess The Team")
                 .fontWeight(.bold)
-            Image(answers.teams[randomNum])
+            Image(answers.teams[randomNum1])
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.vertical)
                 .frame(width: 150)
-            HStack {
+            VStack {
                
-                Button("Test") {
+                Button(answers.teams[randomNum1]) {
                     
-                } //use boolean
-            }
+                }
+                .padding(.vertical)
+                
+                
+                
+                Button(answers.teams[randomNum2]) {
+                    
+                }
+                .padding(.vertical)
+                
+                Button(answers.teams[randomNum3]) {
+                    
+                }
+                .padding(.vertical)
+                
+                
+                
+        
         }
           
         }
+        .padding()
+        .toolbar {
+            Button(){
+                showHelp()
+            } label: {
+                Image(systemName: "questionmark.circle")
+            }
+    }
 }
 
 
@@ -38,4 +64,5 @@ struct nbaTeamGame_Previews: PreviewProvider {
     static var previews: some View {
         nbaTeamGame(level: "")
     }
+}
 }

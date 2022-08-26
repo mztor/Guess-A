@@ -14,3 +14,4 @@ struct questionBank {
 let answers = questionBank(
     teams: ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
 )
+

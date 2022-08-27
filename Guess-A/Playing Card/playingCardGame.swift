@@ -335,6 +335,7 @@ struct playingCardGame: View {
                 Button() {
                     
                     showHintCard.toggle()
+                    setColour()
                     
                 } label: {
                     

@@ -120,7 +120,7 @@ struct playingCardGame: View {
                     VStack{
                         
                         if testingMode == true {
-                            Text(suitesArray[randomSuiteNum] + " of " + valuesArray[randomValueNum] + ".")
+                            Text(valuesArray[randomValueNum] + " of " + suitesArray[randomSuiteNum] + ".")
                         }
                         HStack {
                             

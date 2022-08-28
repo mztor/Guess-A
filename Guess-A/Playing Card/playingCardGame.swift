@@ -13,9 +13,7 @@ struct playingCardGame: View {
     
     var level: String
     
-    var correctOrNot = ""
-    
-    @State var showValue = "?"
+    @State var correctOrNot = ""
     
     @State var suiteGuess = ""
     
@@ -33,16 +31,39 @@ struct playingCardGame: View {
     
     @State var guessCounter = 0
     
+    @State var pointCounter = 0
+    
+    @State var maxScore = 0
+    
     @State private var showHelpCard = false
     
     @State private var showHintCard = false
     
+    @State private var correctAlert = false
+    
+    @State private var incorrectAlert = false
+    
+    @State private var gameFailed = false
+    
     func checkGuesses() {
         
-        if suiteGuess == suitesArray[randomSuiteNum] {
+        if suiteGuess == suitesArray[randomSuiteNum] && valueGuess == valuesArray[randomValueNum]{
             
+            correctOrNot = "correct"
         }
-    }
+        else if suiteGuess == suitesArray[randomSuiteNum] {
+                
+            correctOrNot = "onlySuite"
+        }
+        else if valueGuess == valuesArray[randomValueNum] {
+                
+            correctOrNot = "onlyValue"
+            
+        } else {
+            
+            correctOrNot = "no"
+        }
+        }
     func setColour() { //set colour of card for hint on Beginner difficult
         
         if suitesArray[randomSuiteNum] == "♠️" || suitesArray[randomSuiteNum] == "♣️" {
@@ -53,6 +74,46 @@ struct playingCardGame: View {
         if suitesArray[randomSuiteNum] == "♦️" || suitesArray[randomSuiteNum] == "♥️" {
             
             cardColour = "red"
+        }
+    }
+    func generateMaxScore() {
+        
+        if level == "Beginner" {
+            
+            maxScore = 3
+            
+        } else if level == "Gambler" {
+            
+            maxScore = 6
+            
+        } else if level == "Psychic" {
+            
+            maxScore = 9
+            
+        }
+    }
+    func generateRoundScore() {
+        
+        if guessCounter <= 13 {
+            
+            pointCounter += 1
+        }
+        if guessCounter <= 10 {
+            
+            pointCounter += 1
+        }
+        if guessCounter <= 6 {
+            
+            pointCounter += 1
+        }
+        if level == "Gambler" {
+            
+            pointCounter = pointCounter*2
+            
+        } else if level == "Psychic" {
+            
+            pointCounter = pointCounter*3
+            
         }
     }
     var body: some View {
@@ -70,22 +131,72 @@ struct playingCardGame: View {
                 VStack{
                     
                     HStack {
-                        Text("♠️")
-                            .font(.largeTitle)
                         
-                        Text("♦️")
-                            .font(.largeTitle)
+                        ZStack {
+                            
+                            if suitesArray[randomSuiteNum] == "♠️" && correctOrNot == "onlySuite" {
+                                
+                            Circle().fill(Color.green)
+                                .frame(width: 40, height: 40)
+                            }
+                            
+                            Text("♠️")
+                                .font(.largeTitle)
+                            
+                        }
                         
-                        Text("♣️")
-                            .font(.largeTitle)
+                        ZStack {
+                            
+                            if suitesArray[randomSuiteNum] == "♦️" && correctOrNot == "onlySuite" {
+                                
+                            Circle().fill(Color.green)
+                                .frame(width: 40, height: 40)
+                            }
+                            
+                            Text("♦️")
+                                .font(.largeTitle)
+                            
+                        }
                         
-                        Text("♥️")
-                            .font(.largeTitle)
+                        ZStack {
+                            
+                            if suitesArray[randomSuiteNum] == "♣️" && correctOrNot == "onlySuite" {
+                                
+                            Circle().fill(Color.green)
+                                .frame(width: 40, height: 40)
+                            }
+                            
+                            Text("♣️")
+                                .font(.largeTitle)
+                            
+                        }
+                        
+                        ZStack {
+                            
+                            if suitesArray[randomSuiteNum] == "♥️" && correctOrNot == "onlySuite" {
+                                
+                            Circle().fill(Color.green)
+                                .frame(width: 40, height: 40)
+                            }
+                            
+                            Text("♥️")
+                                .font(.largeTitle)
+                            
+                        }
                         
                     }
-                    
-                    Text("Number: " + showValue)
-                        .font(.title)
+                    if level != "Psychic" {
+                        if valueGuess == valuesArray[randomSuiteNum] && correctOrNot == "onlyValue" {
+                            
+                            Text("Number: " + valuesArray[randomValueNum])
+                                .font(.title)
+                            
+                        } else {
+                            
+                            Text("Number: ?")
+                                .font(.title)
+                        }
+                    }
                 }
             }
             VStack{ //This VStack starts all the code for the buttons
@@ -309,8 +420,26 @@ struct playingCardGame: View {
                     }
                     .padding(.horizontal)
                     
-                    Button {
+                    
+                    Button {  //submission button
                         
+                        guessCounter += 1
+                        
+                        checkGuesses()
+                        
+                        if correctOrNot == "correct" {
+                            
+                            generateMaxScore()
+                            
+                            generateRoundScore()
+                            
+                            
+                            
+                        } else if correctOrNot == "no" {
+                            
+                            
+                            
+                        }
                     } label: {
                         
                         Text("ENTER")
@@ -366,7 +495,9 @@ struct playingCardGame: View {
 }
 
 struct playingCardGame_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         playingCardGame(level: "")
     }
 }

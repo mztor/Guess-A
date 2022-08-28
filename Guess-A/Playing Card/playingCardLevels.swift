@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+var testingMode = false
+
 struct playingCardLevels: View {
     
     @State private var showHelpCard = false
+    
+    @State private var testingModeOn = false
     
     var body: some View {
         
@@ -86,18 +90,36 @@ struct playingCardLevels: View {
         }
         .toolbar {
             
-            Button() {
-                
-                showHelpCard.toggle()
+            HStack {
             
-            } label: {
+                Button() {
+                    
+                    testingModeOn.toggle()
+                    
+                } label: {
+                    
+                    Image(systemName: "t.circle")
+                    
+                }
+                .alert(isPresented: $testingModeOn) {
+                    
+                    Alert(title: Text("Testing..."), message: Text("Testing mode has been toggled. Testing Mode is no longer " + String(testingMode) + "."), dismissButton: .default(Text("Ok"), action: { testingMode.toggle()
+                    }))
+                }
                 
-                Image(systemName: "questionmark.circle")
+                Button() {
+                    
+                    showHelpCard.toggle()
                 
-            }
-            .alert(isPresented: $showHelpCard) {
-                
-                Alert(title: Text("Help!"), message: Text("Select a difficulty from 'Beginner' (Easy), 'Gambler' (Medium) or 'Psychic' (Hard) below to start the game!"), dismissButton: .default(Text("Ok")))
+                } label: {
+                    
+                    Image(systemName: "questionmark.circle")
+                    
+                }
+                .alert(isPresented: $showHelpCard) {
+                    
+                    Alert(title: Text("Help!"), message: Text("Select a difficulty from 'Beginner' (Easy), 'Gambler' (Medium) or 'Psychic' (Hard) below to start the game!"), dismissButton: .default(Text("Ok")))
+                }
             }
         }
         .navigationBarTitle(Text(""), displayMode: .inline)

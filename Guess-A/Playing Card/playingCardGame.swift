@@ -134,6 +134,10 @@ struct playingCardGame: View {
                     
                     VStack{
                         
+                        if testingMode == true {
+                            Text(suitesArray[randomSuiteNum] + " of " + valuesArray[randomValueNum] + ".")
+                        }
+                        
                         HStack {
                             
                             ZStack {

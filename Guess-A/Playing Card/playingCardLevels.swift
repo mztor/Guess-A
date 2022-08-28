@@ -97,7 +97,7 @@ struct playingCardLevels: View {
             }
             .alert(isPresented: $showHelpCard) {
                 
-                Alert(title: Text("Help!"), message: Text("Select one of the difficulty buttons below to start the game!"), dismissButton: .default(Text("Ok")))
+                Alert(title: Text("Help!"), message: Text("Select a difficulty from 'Beginner' (Easy), 'Gambler' (Medium) or 'Psychic' (Hard) below to start the game!"), dismissButton: .default(Text("Ok")))
             }
         }
     }

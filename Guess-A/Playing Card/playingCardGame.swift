@@ -11,6 +11,10 @@ enum ActiveAlert {
     case correct, incorrect
 }
 
+var pCardPointCounter = 0
+
+var maxScore = 0
+
 struct playingCardGame: View {
     
     //variable declaration
@@ -34,10 +38,6 @@ struct playingCardGame: View {
     @State var cardColour = ""
     
     @State var guessCounter = 0
-    
-    @State public var pCardPointCounter = 0
-    
-    @State var maxScore = 0
     
     @State var suiteGuessed = false
     
@@ -479,7 +479,6 @@ struct playingCardGame: View {
                         }
                     }
                     .buttonStyle(.bordered)
-                    
                 }
                 Spacer()
                 
@@ -521,7 +520,8 @@ struct playingCardGame: View {
                 }
                 }
             }
-    }
+            .navigationBarTitle(Text(""), displayMode:.inline)
+        }
     }
 }
 

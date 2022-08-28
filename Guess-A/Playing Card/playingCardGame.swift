@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum ActiveAlert {
+    case correct, incorrect
+}
+
 struct playingCardGame: View {
     
     //variable declaration
@@ -43,9 +47,9 @@ struct playingCardGame: View {
     
     @State private var showHintCard = false
     
-    @State var showCorrectAlert = false
+    @State var showCorrectnessAlert = false
     
-    @State var showIncorrectAlert = false
+    @State var activeAlert: ActiveAlert = .incorrect
     
     @State var gameFailed = false
     
@@ -436,7 +440,7 @@ struct playingCardGame: View {
                         
                         if correctOrNot == "correct" {
                             
-                            showCorrectAlert.toggle()
+                            self.activeAlert = .correct
                             
                             generateMaxScore()
                             
@@ -444,9 +448,10 @@ struct playingCardGame: View {
                             
                         } else if correctOrNot == "no" {
                             
-                            showIncorrectAlert.toggle()
+                            self.activeAlert = .incorrect
                             
                         }
+                        showCorrectnessAlert.toggle()
                         
                     } label: {
                         
@@ -454,13 +459,13 @@ struct playingCardGame: View {
                             .font(.largeTitle)
                             .foregroundColor(.green)
                     }
-                    .alert(isPresented: $showCorrectAlert) {
-                        
-                        Alert(title: Text("Correct!"), message: Text("You guessed the playing Card!"), dismissButton: .default(Text("Ok")))
-                    }
-                    .alert(isPresented: $showIncorrectAlert) {
-                        
-                        Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly 😢"), dismissButton: .default(Text("Ok")))
+                    .alert(isPresented: $showCorrectnessAlert) {
+                        switch activeAlert {
+                        case .correct:
+                            return Alert(title: Text("Correct!"), message: Text("You guessed the playing Card! 🥳"), dismissButton: .default(Text("Ok")))
+                        case .incorrect:
+                            return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Ok")))
+                        }
                     }
                     .padding(.horizontal)
                 }

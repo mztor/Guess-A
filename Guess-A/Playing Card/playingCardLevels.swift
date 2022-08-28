@@ -100,6 +100,7 @@ struct playingCardLevels: View {
                 Alert(title: Text("Help!"), message: Text("Select a difficulty from 'Beginner' (Easy), 'Gambler' (Medium) or 'Psychic' (Hard) below to start the game!"), dismissButton: .default(Text("Ok")))
             }
         }
+        .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
 

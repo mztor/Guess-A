@@ -24,14 +24,14 @@ struct playingCardFinish: View {
                 .fontWeight(.semibold)
                 .padding(0.2)
             Spacer()
-            if pCardPointCounter == 1/3 * maxScore {
+            if pCardPointCounter == maxScore/3 {
                 Image("bronzeMedal")
                     .padding()
                 Text("Bronze Medal Earned!")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(0.2)
-            } else if pCardPointCounter == 2/3 * maxScore {
+            } else if pCardPointCounter == maxScore*2/3 {
                 Image("silverMedal")
                     .padding()
                 Text("Silver Medal Earned!")
@@ -58,6 +58,7 @@ struct playingCardFinish: View {
             }
             Spacer()
         }
+        .navigationBarHidden(true)
         .toolbar {
             
             Button() {

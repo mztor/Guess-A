@@ -107,26 +107,17 @@ struct playingCardGame: View {
     }
     func generateRoundScore() {
         
-        if guessCounter <= 13 {
+        if guessCounter > 10 && guessCounter <= 13 {
             
-            pCardPointCounter += 1
-        }
-        if guessCounter <= 10 {
+            pCardPointCounter = maxScore/3
             
-            pCardPointCounter += 1
-        }
-        if guessCounter <= 6 {
+        } else if guessCounter > 6 && guessCounter <= 10 {
             
-            pCardPointCounter += 1
-        }
-        if level == "Gambler" {
+            pCardPointCounter = maxScore*2/3
             
-            pCardPointCounter = pCardPointCounter*2
+        } else if guessCounter <= 6 {
             
-        } else if level == "Psychic" {
-            
-            pCardPointCounter = pCardPointCounter*3
-            
+            pCardPointCounter = maxScore
         }
     }
     var body: some View {
@@ -502,7 +493,7 @@ struct playingCardGame: View {
                     }
                     .alert(isPresented: $showHintCard) {
                         
-                        Alert(title: Text("Hint!"), message: Text("The cards color is " + cardColour), dismissButton: .default(Text("Ok")))
+                        Alert(title: Text("Hint!"), message: Text("The cards color is " + cardColour + "."), dismissButton: .default(Text("Ok")))
                     }
                 }
                 Button() {

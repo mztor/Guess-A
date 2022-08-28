@@ -53,7 +53,7 @@ struct playingCardLevels: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: playingCardGame(level: "Beginner")) { //level variable changes conditionsin next View
+                NavigationLink(destination: playingCardGame(level: "Beginner")) { //level variable changes conditions in next View
                     Text("Beginner")
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -82,7 +82,7 @@ struct playingCardLevels: View {
         }
         .toolbar {
             HStack {
-                Button() { //alert buttons for testing mode and online help
+                Button() { //buttons for testing mode and online help which show alerts
                     
                     testingModeOn.toggle()
                     
@@ -95,7 +95,7 @@ struct playingCardLevels: View {
                     Alert(title: Text("Testing..."), message: Text("Testing mode has been toggled. Testing Mode is no longer " + String(testingMode) + "."), dismissButton: .default(Text("Ok"), action: { testingMode.toggle()
                     }))
                 }
-                Button() {
+                Button() { //help button
                     
                     showHelpCard.toggle()
                 

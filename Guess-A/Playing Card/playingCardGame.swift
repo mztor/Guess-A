@@ -42,7 +42,7 @@ struct playingCardGame: View {
     @State var finishViewNavigate = false //for alerts that send to new Views
     @State var levelsViewNavigate = false
     
-    func checkGuesses() {
+    func checkGuesses() { //check if guesses are correct, partially correct or incorrect
         
         if suiteGuess == suitesArray[randomSuiteNum] && valueGuess == valuesArray[randomValueNum] {
             
@@ -65,7 +65,7 @@ struct playingCardGame: View {
             correctOrNot = "no"
         }
     }
-    func setColour() { //set colour of card for hint on Beginner difficult
+    func setColour() { //set colour of card for hint on Beginner difficulty
         
         if suitesArray[randomSuiteNum] == "♠️" || suitesArray[randomSuiteNum] == "♣️" {
             
@@ -92,7 +92,7 @@ struct playingCardGame: View {
             
         }
     }
-    func generateRoundScore() {
+    func generateRoundScore() { //allocate points depending on number of guesses
         
         if guessCounter > 10 && guessCounter <= 13 {
             
@@ -110,9 +110,7 @@ struct playingCardGame: View {
     var body: some View {
         
             VStack{
-                
                 HStack{
-                    
                     Text("?")
                         .foregroundColor(.white)
                         .font(.largeTitle)
@@ -124,7 +122,6 @@ struct playingCardGame: View {
                         if testingMode == true {
                             Text(suitesArray[randomSuiteNum] + " of " + valuesArray[randomValueNum] + ".")
                         }
-                        
                         HStack {
                             
                             ZStack {
@@ -134,12 +131,9 @@ struct playingCardGame: View {
                                 Circle().fill(Color.green)
                                     .frame(width: 40, height: 40)
                                 }
-                                
                                 Text("♠️")
                                     .font(.largeTitle)
-                                
                             }
-                            
                             ZStack {
                                 
                                 if suitesArray[randomSuiteNum] == "♦️" && suiteGuessed == true {
@@ -147,12 +141,9 @@ struct playingCardGame: View {
                                 Circle().fill(Color.green)
                                     .frame(width: 40, height: 40)
                                 }
-                                
                                 Text("♦️")
                                     .font(.largeTitle)
-                                
                             }
-                            
                             ZStack {
                                 
                                 if suitesArray[randomSuiteNum] == "♣️" && suiteGuessed == true {
@@ -160,12 +151,9 @@ struct playingCardGame: View {
                                 Circle().fill(Color.green)
                                     .frame(width: 40, height: 40)
                                 }
-                                
                                 Text("♣️")
                                     .font(.largeTitle)
-                                
                             }
-                            
                             ZStack {
                                 
                                 if suitesArray[randomSuiteNum] == "♥️" && suiteGuessed == true {
@@ -173,12 +161,9 @@ struct playingCardGame: View {
                                 Circle().fill(Color.green)
                                     .frame(width: 40, height: 40)
                                 }
-                                
                                 Text("♥️")
                                     .font(.largeTitle)
-                                
                             }
-                            
                         }
                         if level != "Psychic" {
                             if valueGuessed == true {
@@ -195,18 +180,15 @@ struct playingCardGame: View {
                     }
                 }
                 VStack{ //This VStack starts all the code for the buttons
-                   
                     HStack{
-                        
                         Button {
-                            
+                        
                             suiteGuess = "♠️"
                             
                         } label: {
                             
                             Text("♠️")
                                 .font(.largeTitle)
-                            
                         }
                         Button {
                             
@@ -239,7 +221,6 @@ struct playingCardGame: View {
                     .buttonStyle(.bordered)
                     
                     HStack {
-                        
                         Button {
                             
                             valueGuess = "A"
@@ -275,12 +256,10 @@ struct playingCardGame: View {
                                 .foregroundColor(.black)
                         }
                         .padding(.horizontal)
-                        
                     }
                     .buttonStyle(.bordered)
                     
                     HStack {
-                        
                         Button {
                             
                             valueGuess = "4"
@@ -316,12 +295,10 @@ struct playingCardGame: View {
                                 .foregroundColor(.black)
                         }
                         .padding(.horizontal)
-                        
                     }
                     .buttonStyle(.bordered)
                     
                     HStack {
-                        
                         Button {
                             
                             valueGuess = "7"
@@ -361,7 +338,6 @@ struct playingCardGame: View {
                     .buttonStyle(.bordered)
                     
                     HStack {
-                        
                         Button {
                             
                             valueGuess = "10"
@@ -397,12 +373,10 @@ struct playingCardGame: View {
                                 .foregroundColor(.black)
                         }
                         .padding(.horizontal)
-                        
                     }
                     .buttonStyle(.bordered)
                     
                     HStack {
-                        
                         Button {
                             
                             valueGuess = "K"
@@ -415,12 +389,12 @@ struct playingCardGame: View {
                         }
                         .padding(.horizontal)
                         
-                        ZStack {
+                        ZStack { //Hidden navigation links will navigate to new views after alerts
                             
-                            NavigationLink(destination: playingCardFinish(), isActive: $finishViewNavigate) {
+                            NavigationLink(destination: playingCardFinish(), isActive: $finishViewNavigate) { //navigates to end screen when guess is correct
                                 Text("")
                             }
-                            NavigationLink(destination: playingCardLevels(), isActive: $levelsViewNavigate) {
+                            NavigationLink(destination: playingCardLevels(), isActive: $levelsViewNavigate) { //navigate to difficulty screen when game is failed
                                 Text("")
                             }
                         
@@ -433,7 +407,7 @@ struct playingCardGame: View {
                                 
                                 self.activeAlert = .correct
                                 generateMaxScore()
-                                generateRoundScore()
+                                generateRoundScore() //creates pCardPointCounter variable for finish screen
                                 
                             } else if correctOrNot == "no" {
                                 
@@ -453,7 +427,7 @@ struct playingCardGame: View {
                         }
                         .alert(isPresented: $showCorrectnessAlert) {
                             
-                            switch activeAlert {
+                            switch activeAlert { //chooses one of the below alerts depending on correctness of guess. Also shows alert for when game is failed.
                                 
                             case .correct:
                                 
@@ -475,12 +449,11 @@ struct playingCardGame: View {
                     .buttonStyle(.bordered)
                 }
                 Spacer()
-                
             }
             .toolbar {
                 HStack {
                     
-                if level == "Beginner" {
+                if level == "Beginner" { //only shows hint button on easiest difficulty
                     
                     Button() {
                         
@@ -496,7 +469,7 @@ struct playingCardGame: View {
                         Alert(title: Text("Hint!"), message: Text("The cards color is " + cardColour + "."), dismissButton: .default(Text("Ok")))
                     }
                 }
-                Button() {
+                Button() { //help button
                     
                     showHelpCard.toggle()
                     

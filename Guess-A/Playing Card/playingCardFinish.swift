@@ -9,38 +9,52 @@ import SwiftUI
 
 struct playingCardFinish: View {
     
-    @State private var showHelpCard = false
+    @State private var showHelpCard = false //for help alert
     
     var body: some View {
+        
         VStack {
             Spacer()
+            
             Text("Good Game!")
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .padding(0.2)
+            
             Spacer()
+            
             Text("Score: " + String(pCardPointCounter))
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(0.2)
+            
             Spacer()
-            if pCardPointCounter == maxScore/3 {
+            
+            if pCardPointCounter == maxScore/3 { //allocates a medal depending on score
+                
                 Image("bronzeMedal")
                     .padding()
+                
                 Text("Bronze Medal Earned!")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(0.2)
+                
             } else if pCardPointCounter == maxScore*2/3 {
+                
                 Image("silverMedal")
                     .padding()
+                
                 Text("Silver Medal Earned!")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(0.2)
+                
             } else if pCardPointCounter == maxScore {
+                
                 Image("goldMedal")
                     .padding()
+                
                 Text("Gold Medal Earned!")
                     .font(.title2)
                     .fontWeight(.bold)
@@ -48,7 +62,7 @@ struct playingCardFinish: View {
             }
             Spacer()
             
-            NavigationLink(destination: ContentView()) {
+            NavigationLink(destination: ContentView()) { //returns to game selection screen
                 Text("FINISH")
                     .font(.largeTitle)
                     .foregroundColor(.green)
@@ -58,7 +72,7 @@ struct playingCardFinish: View {
             }
             Spacer()
         }
-        .navigationBarHidden(true)
+        .navigationBarTitle(Text(""), displayMode: .inline)
         .toolbar {
             
             Button() {
@@ -68,7 +82,6 @@ struct playingCardFinish: View {
             } label: {
                 
                 Image(systemName: "questionmark.circle")
-                
             }
             .alert(isPresented: $showHelpCard) {
                 

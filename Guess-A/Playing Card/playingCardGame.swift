@@ -121,7 +121,7 @@ struct playingCardGame: View {
         }
     }
     var body: some View {
-        NavigationView {
+        
             VStack{
                 
                 HStack{
@@ -516,7 +516,6 @@ struct playingCardGame: View {
                 }
             }
             .navigationBarTitle(Text(""), displayMode:.inline)
-        }
     }
 }
 

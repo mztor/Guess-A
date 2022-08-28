@@ -48,7 +48,7 @@ struct playingCardFinish: View {
             }
             Spacer()
             
-            NavigationLink(destination: playingCardLevels()) {
+            NavigationLink(destination: ContentView()) {
                 Text("FINISH")
                     .font(.largeTitle)
                     .foregroundColor(.green)
@@ -72,7 +72,7 @@ struct playingCardFinish: View {
             }
             .alert(isPresented: $showHelpCard) {
                 
-                Alert(title: Text("Help!"), message: Text("Game is Over! Press 'FINISH' to return to difficulty selection."), dismissButton: .default(Text("Ok")))
+                Alert(title: Text("Help!"), message: Text("Game is Over! Press 'FINISH' to return to main menu."), dismissButton: .default(Text("Ok")))
             }
         }
     }

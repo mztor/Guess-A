@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-var testingMode = false
+var testingMode = false //global variable
 
 struct playingCardLevels: View {
     
-    @State private var showHelpCard = false
-    
+    @State private var showHelpCard = false //for popups to show
     @State private var testingModeOn = false
     
     var body: some View {
         
         VStack {
-            
             VStack {
                 
                 Text("GUESS")
@@ -32,12 +30,11 @@ struct playingCardLevels: View {
                     .padding(0.2)
                 
                 Text("PL♠️YING C♦️RD")
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                    .font(.largeTitle)
                     .fontWeight(.black)
                     .padding(0.2)
             }
             .padding()
-            
             Spacer()
             
             VStack {
@@ -56,14 +53,13 @@ struct playingCardLevels: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: playingCardGame(level: "Beginner")) {
+                NavigationLink(destination: playingCardGame(level: "Beginner")) { //level variable changes conditionsin next View
                     Text("Beginner")
                         .font(.title2)
                         .fontWeight(.heavy)
                         .foregroundColor(.green)
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
-                    
                 }
                 NavigationLink(destination: playingCardGame(level: "Gambler")) {
                     Text("Gambler")
@@ -72,7 +68,6 @@ struct playingCardLevels: View {
                         .foregroundColor(.yellow)
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
-                    
                 }
                 NavigationLink(destination: playingCardGame(level: "Psychic")) {
                     Text("Psychic")
@@ -81,32 +76,25 @@ struct playingCardLevels: View {
                         .foregroundColor(.red)
                         .background(RoundedRectangle(cornerRadius: 18).fill(Color.black).frame(width: 165, height: 50))
                         .padding()
-                    
                 }
-                
                 Spacer()
-                
             }
         }
         .toolbar {
-            
             HStack {
-            
-                Button() {
+                Button() { //alert buttons for testing mode and online help
                     
                     testingModeOn.toggle()
                     
                 } label: {
                     
                     Image(systemName: "t.circle")
-                    
                 }
                 .alert(isPresented: $testingModeOn) {
                     
                     Alert(title: Text("Testing..."), message: Text("Testing mode has been toggled. Testing Mode is no longer " + String(testingMode) + "."), dismissButton: .default(Text("Ok"), action: { testingMode.toggle()
                     }))
                 }
-                
                 Button() {
                     
                     showHelpCard.toggle()
@@ -114,7 +102,6 @@ struct playingCardLevels: View {
                 } label: {
                     
                     Image(systemName: "questionmark.circle")
-                    
                 }
                 .alert(isPresented: $showHelpCard) {
                     
@@ -122,7 +109,7 @@ struct playingCardLevels: View {
                 }
             }
         }
-        .navigationBarTitle(Text(""), displayMode: .inline)
+        .navigationBarTitle(Text(""), displayMode: .inline) //reduces white space at top of screen
     }
 }
 

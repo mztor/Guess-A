@@ -7,53 +7,40 @@
 
 import SwiftUI
 
-enum ActiveAlert {
-    case correct, incorrect
+enum ActiveAlert { //sets up 3 possible popups for when guess is correct, incorrect or game failed
+    case correct, incorrect, failed
 }
 
-var pCardPointCounter = 0
-
+var pCardPointCounter = 0 //global variables
 var maxScore = 0
 
 struct playingCardGame: View {
     
-    //variable declaration
-    
-    var level: String
+    var level: String //variable declaration
     
     @State var correctOrNot = ""
-    
     @State var suiteGuess = ""
-    
     @State var valueGuess = ""
     
     let suitesArray = ["♠️", "♦️", "♣️", "♥️"]
-    
     let valuesArray = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     
     @State var randomSuiteNum = Int.random(in: 0...3)
-    
     @State var randomValueNum = Int.random(in: 0...12)
-    
     @State var cardColour = ""
     
     @State var guessCounter = 0
-    
     @State var suiteGuessed = false
-    
     @State var valueGuessed = false
     
-    @State private var showHelpCard = false
-    
+    @State private var showHelpCard = false //variables for popups
     @State private var showHintCard = false
-    
     @State var showCorrectnessAlert = false
-    
     @State var activeAlert: ActiveAlert = .incorrect
-    
-    @State var finishViewNavigate = false
-    
     @State var gameFailed = false
+    
+    @State var finishViewNavigate = false //for alerts that send to new Views
+    @State var levelsViewNavigate = false
     
     func checkGuesses() {
         
@@ -433,25 +420,28 @@ struct playingCardGame: View {
                             NavigationLink(destination: playingCardFinish(), isActive: $finishViewNavigate) {
                                 Text("")
                             }
+                            NavigationLink(destination: playingCardLevels(), isActive: $levelsViewNavigate) {
+                                Text("")
+                            }
                         
                         Button {  //submission button
                             
                             guessCounter += 1
-                            
                             checkGuesses()
                             
                             if correctOrNot == "correct" {
                                 
                                 self.activeAlert = .correct
-                                
                                 generateMaxScore()
-                                
                                 generateRoundScore()
                                 
                             } else if correctOrNot == "no" {
                                 
                                 self.activeAlert = .incorrect
+                            }
+                            if guessCounter == 14 {
                                 
+                                self.activeAlert = .failed
                             }
                             showCorrectnessAlert.toggle()
                             
@@ -462,12 +452,21 @@ struct playingCardGame: View {
                                 .foregroundColor(.green)
                         }
                         .alert(isPresented: $showCorrectnessAlert) {
+                            
                             switch activeAlert {
+                                
                             case .correct:
+                                
                                 return Alert(title: Text("Correct!"), message: Text("You guessed the playing Card! 🥳"), dismissButton: .default(Text("Next"), action: { finishViewNavigate.toggle()
                                 }))
                             case .incorrect:
-                                return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Ok")))
+                                
+                                return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Try Again")))
+                            case .failed:
+                                
+                                return Alert(title: Text("Game Failed."), message: Text("You guessed too many times. 💀"), dismissButton: .default(Text("Try Again"), action: {
+                                    levelsViewNavigate.toggle()
+                                }))
                             }
                         }
                         .padding(.horizontal)
@@ -479,7 +478,6 @@ struct playingCardGame: View {
                 
             }
             .toolbar {
-                
                 HStack {
                     
                 if level == "Beginner" {
@@ -487,13 +485,11 @@ struct playingCardGame: View {
                     Button() {
                         
                         showHintCard.toggle()
-                        
                         setColour()
                         
                     } label: {
                         
                         Image(systemName: "lightbulb.circle")
-                        
                     }
                     .alert(isPresented: $showHintCard) {
                         
@@ -507,7 +503,6 @@ struct playingCardGame: View {
                 } label: {
                     
                     Image(systemName: "questionmark.circle")
-                    
                 }
                 .alert(isPresented: $showHelpCard) {
                     

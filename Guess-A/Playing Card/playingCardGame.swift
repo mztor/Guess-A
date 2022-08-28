@@ -35,42 +35,49 @@ struct playingCardGame: View {
     
     @State var maxScore = 0
     
+    @State var suiteGuessed = false
+    
+    @State var valueGuessed = false
+    
     @State private var showHelpCard = false
     
     @State private var showHintCard = false
     
-    @State private var correctAlert = false
+    @State var showCorrectAlert = false
     
-    @State private var incorrectAlert = false
+    @State var showIncorrectAlert = false
     
-    @State private var gameFailed = false
+    @State var gameFailed = false
     
     func checkGuesses() {
         
-        if suiteGuess == suitesArray[randomSuiteNum] && valueGuess == valuesArray[randomValueNum]{
+        if suiteGuess == suitesArray[randomSuiteNum] && valueGuess == valuesArray[randomValueNum] {
             
             correctOrNot = "correct"
+            
+            suiteGuessed = true
+            
+            valueGuessed = true
         }
         else if suiteGuess == suitesArray[randomSuiteNum] {
                 
-            correctOrNot = "onlySuite"
+            suiteGuessed = true
         }
         else if valueGuess == valuesArray[randomValueNum] {
                 
-            correctOrNot = "onlyValue"
+            valueGuessed = true
             
         } else {
             
             correctOrNot = "no"
         }
-        }
+    }
     func setColour() { //set colour of card for hint on Beginner difficult
         
         if suitesArray[randomSuiteNum] == "♠️" || suitesArray[randomSuiteNum] == "♣️" {
             
             cardColour = "black"
         }
-        
         if suitesArray[randomSuiteNum] == "♦️" || suitesArray[randomSuiteNum] == "♥️" {
             
             cardColour = "red"
@@ -134,7 +141,7 @@ struct playingCardGame: View {
                         
                         ZStack {
                             
-                            if suitesArray[randomSuiteNum] == "♠️" && correctOrNot == "onlySuite" {
+                            if suitesArray[randomSuiteNum] == "♠️" && suiteGuessed == true {
                                 
                             Circle().fill(Color.green)
                                 .frame(width: 40, height: 40)
@@ -147,7 +154,7 @@ struct playingCardGame: View {
                         
                         ZStack {
                             
-                            if suitesArray[randomSuiteNum] == "♦️" && correctOrNot == "onlySuite" {
+                            if suitesArray[randomSuiteNum] == "♦️" && suiteGuessed == true {
                                 
                             Circle().fill(Color.green)
                                 .frame(width: 40, height: 40)
@@ -160,7 +167,7 @@ struct playingCardGame: View {
                         
                         ZStack {
                             
-                            if suitesArray[randomSuiteNum] == "♣️" && correctOrNot == "onlySuite" {
+                            if suitesArray[randomSuiteNum] == "♣️" && suiteGuessed == true {
                                 
                             Circle().fill(Color.green)
                                 .frame(width: 40, height: 40)
@@ -173,7 +180,7 @@ struct playingCardGame: View {
                         
                         ZStack {
                             
-                            if suitesArray[randomSuiteNum] == "♥️" && correctOrNot == "onlySuite" {
+                            if suitesArray[randomSuiteNum] == "♥️" && suiteGuessed == true {
                                 
                             Circle().fill(Color.green)
                                 .frame(width: 40, height: 40)
@@ -186,14 +193,14 @@ struct playingCardGame: View {
                         
                     }
                     if level != "Psychic" {
-                        if valueGuess == valuesArray[randomSuiteNum] && correctOrNot == "onlyValue" {
+                        if valueGuessed == true {
                             
-                            Text("Number: " + valuesArray[randomValueNum])
+                            Text("Value: " + valuesArray[randomValueNum])
                                 .font(.title)
                             
                         } else {
                             
-                            Text("Number: ?")
+                            Text("Value: ?")
                                 .font(.title)
                         }
                     }
@@ -429,25 +436,33 @@ struct playingCardGame: View {
                         
                         if correctOrNot == "correct" {
                             
+                            showCorrectAlert.toggle()
+                            
                             generateMaxScore()
                             
                             generateRoundScore()
                             
-                            
-                            
                         } else if correctOrNot == "no" {
                             
-                            
+                            showIncorrectAlert.toggle()
                             
                         }
+                        
                     } label: {
                         
                         Text("ENTER")
                             .font(.largeTitle)
                             .foregroundColor(.green)
                     }
+                    .alert(isPresented: $showCorrectAlert) {
+                        
+                        Alert(title: Text("Correct!"), message: Text("You guessed the playing Card!"), dismissButton: .default(Text("Ok")))
+                    }
+                    .alert(isPresented: $showIncorrectAlert) {
+                        
+                        Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly 😢"), dismissButton: .default(Text("Ok")))
+                    }
                     .padding(.horizontal)
-                    
                 }
                 .buttonStyle(.bordered)
                 
@@ -464,6 +479,7 @@ struct playingCardGame: View {
                 Button() {
                     
                     showHintCard.toggle()
+                    
                     setColour()
                     
                 } label: {

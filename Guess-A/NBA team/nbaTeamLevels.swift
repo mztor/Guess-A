@@ -85,9 +85,8 @@ struct nbaTeamLevels: View {
             } label: {
                 Image(systemName: "questionmark.circle")
             }
-            .alert(isPresented: $showHelpCard) {Alert(title: Text("Help!"), message: Text("*Choose the desired difficulty located under 'Difficulty Selection'."),
-                message:Text("."),
-                message:Text("."),
+            .alert(isPresented: $showHelpCard) {Alert(title: Text("Help!"), message: Text("Choose the desired difficulty located under 'Difficulty Selection'"),
+                
                 
                                                       
                                                       

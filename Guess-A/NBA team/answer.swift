@@ -6,5 +6,9 @@
 //
 
 import Foundation
-
+public var randomNum1 = Int.random(in: 1..<8)
+public var randomNum2 = Int.random(in: 1..<8)
+public var randomNum3 = Int.random(in: 1..<8)
+struct answer{
+}
 

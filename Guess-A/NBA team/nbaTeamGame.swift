@@ -6,12 +6,8 @@
 //
 
 import SwiftUI
-
-var randomNum1 = 1
-var randomNum2 = 2
-var randomNum3 = 3
-
 struct nbaTeamGame: View {
+    @State private var showHelpCard = false
     var level: String
     
     @State var guess: String = ""
@@ -51,10 +47,19 @@ struct nbaTeamGame: View {
         }
         .padding()
         .toolbar {
-            Button(){
-                showHelp()
+            Button() {
+                showHelpCard.toggle()
             } label: {
                 Image(systemName: "questionmark.circle")
+            }
+            .alert(isPresented: $showHelpCard) {Alert(title: Text("Help!"), message: Text("To guess the team name press on a button below the image"),
+                
+                
+                                                      
+                                                      
+                dismissButton:
+                    .default(Text("Ok")))
+                
             }
     }
 }

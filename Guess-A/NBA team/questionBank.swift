@@ -9,9 +9,7 @@ import Foundation
 
 struct questionBank {
     
-    let teams: [String]
 }
-let answers = questionBank(
-    teams: ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
-)
+let answers = ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
+
 

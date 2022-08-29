@@ -8,6 +8,8 @@
 import SwiftUI
 struct nbaTeamGame: View {
     @State private var showHelpCard = false
+    @State private var correctA = false
+    @State private var incorrectA = false
     var level: String
     
     @State var guess: String = ""
@@ -15,26 +17,29 @@ struct nbaTeamGame: View {
         VStack{
             Text("Guess The Team")
                 .fontWeight(.bold)
-            Image(answers.teams[randomNum1])
+            Image(answers[randomNum1])
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.vertical)
                 .frame(width: 150)
             VStack {
-               
-                Button(answers.teams[randomNum1]) {
-                    
+                Button(answers[randomNum1]) {
+                    if randomNum1 == randomNum1{
+                        correctA.toggle()
+                        currentScore = currentScore + 1
+
+                    }
                 }
                 .padding(.vertical)
                 
                 
                 
-                Button(answers.teams[randomNum2]) {
+                Button(answers[randomNum2]) {
                     
                 }
                 .padding(.vertical)
                 
-                Button(answers.teams[randomNum3]) {
+                Button(answers[randomNum3]) {
                     
                 }
                 .padding(.vertical)
@@ -43,6 +48,17 @@ struct nbaTeamGame: View {
                 
         
         }
+            .alert(isPresented: $correctA) {Alert(title: Text("Correct"),
+                                                   
+                dismissButton:
+                    .default(Text("Ok")))
+                
+            }
+            .alert(isPresented: $!correctA) {Alert(title: Text("Correct"),
+                                                   
+                dismissButton:
+                    .default(Text("Ok")))
+          
           
         }
         .padding()

@@ -9,6 +9,11 @@ import Foundation
 public var randomNum1 = Int.random(in: 1..<8)
 public var randomNum2 = Int.random(in: 1..<8)
 public var randomNum3 = Int.random(in: 1..<8)
+public var maxScore = 8
+public var currentScore = 0
+public var correctAnswer = Int.random(in: 1..<3)
 struct answer{
+    
+    
 }
 

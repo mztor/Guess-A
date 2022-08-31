@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct letterGame: View {
+    
     @State private var guess = "" //creates an empty variable for the user's guess
     @State private var showingAlert = false
     var level:String
@@ -19,19 +20,23 @@ struct letterGame: View {
     @State var arrLetters = [""] //creates an empty array of possible letters to guess
     @State var score = 0 //sets up the user's score
     @State var startScore = 0
+    //@State var showTestingMode: Bool = false
+    
     var body: some View {
         NavigationView {
             Form {
                 VStack {
-                    Text("\(random) \(score)/\(startScore)") //displays the user's remaining guesses out of their total allowed guesses
+                
+                    Text("\(score)/\(startScore)") //displays the user's remaining guesses out of their total allowed guesses
                     TextField("Guess", text:$guess) //creates the text field for user input
                         .font(.system(size: 25))
                         .multilineTextAlignment(.center)
-                        .autocapitalization(.none)
+                        .autocapitalization(.none) //allows the input of lowercase letters
                         .padding()
                         .keyboardType(.alphabet) //restricts the keyboard to letters only
+                 
+                        .padding()
                     
-                
                     Button("Check guess") {
                         if guess == random {
                             message = ("Correct! You finished with a score of: \(score)")
@@ -51,8 +56,10 @@ struct letterGame: View {
                         } else if level == "Hard" && guess != random {
                             message = ("Wrong!")
                             score = score - 1 //checks if the user is in the 'Hard' level, and is wrong
+                        } else if guess == " " {
+                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for a space
                         } else {
-                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for an empty text field of an invalid guess
+                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for an empty text field
                         }
                         
                         guesses = guesses + "\n" + guess
@@ -73,6 +80,7 @@ struct letterGame: View {
                 }
             }
         }
+        
         .alert(isPresented: $showingAlert) { //creates an alert
             Alert(
                 title: Text(""),
@@ -84,13 +92,14 @@ struct letterGame: View {
                 })
             )
         }
+        
         .navigationTitle(level)
         .onAppear() {
             if level == "Easy" { //sets up the specifics for the 'Easy' level
-                arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] //posible answers
+                arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] //array of posible answers
                 random = arrLetters.randomElement()! //picks a random letter
                 score = 15 //keeps track of the user's score
-                startScore = 15 //allows the start score to be displayed at the top of the screen
+                startScore = 15 //sets the start score so it can be displayed at the top of the screen
             } else if level == "Medium" {
                 arrLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T", "U", "V", "W", "X", "Y", "Z"]
                 random = arrLetters.randomElement()!

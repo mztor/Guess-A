@@ -438,7 +438,7 @@ struct playingCardGame: View {
                                 return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Try Again")))
                             case .failed:
                                 
-                                return Alert(title: Text("Game Failed."), message: Text("The Card was " + valuesArray[randomValueNum] + "of" + suitesArray[randomSuiteNum] + "." + "You guessed too many times. 💀"), dismissButton: .default(Text("Try Again"), action: {
+                                return Alert(title: Text("Game Failed."), message: Text("The Card was " + valuesArray[randomValueNum] + " of " + suitesArray[randomSuiteNum] + ". " + "You guessed too many times. 💀"), dismissButton: .default(Text("Try Again"), action: {
                                     levelsViewNavigate.toggle()
                                 }))
                             }

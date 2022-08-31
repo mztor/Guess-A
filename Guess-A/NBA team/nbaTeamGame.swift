@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+enum ActiveAlert{
+    case correct, incorrect
+}
 struct nbaTeamGame: View {
     @State private var showHelpCard = false
     @State private var correctA = false
-    @State private var incorrectA = false
+    @State var activeAlert: ActiveAlert = .incorrect
+    
     var level: String
     
     @State var guess: String = ""
@@ -26,6 +30,7 @@ struct nbaTeamGame: View {
                 Button(answers[randomNum1]) {
                     if randomNum1 == randomNum1{
                         correctA.toggle()
+                        self.activeAlert = .correct
                         currentScore = currentScore + 1
 
                     }
@@ -35,12 +40,20 @@ struct nbaTeamGame: View {
                 
                 
                 Button(answers[randomNum2]) {
-                    
+                    if randomNum2 != randomNum1{
+                        correctA.toggle()
+                        self.activeAlert = .incorrect
+                        
+                    }
                 }
                 .padding(.vertical)
                 
                 Button(answers[randomNum3]) {
-                    
+                    if randomNum3 != randomNum1{
+                        correctA.toggle()
+                        self.activeAlert = .incorrect
+                        
+                    }
                 }
                 .padding(.vertical)
                 
@@ -48,16 +61,27 @@ struct nbaTeamGame: View {
                 
         
         }
-            .alert(isPresented: $correctA) {Alert(title: Text("Correct"),
-                                                   
-                dismissButton:
-                    .default(Text("Ok")))
+            .onAppear(){
+                generaterandomNum()
+            }
+            .alert(isPresented: $correctA) {
+                switch activeAlert{
+                case .correct:
+                    return Alert(title: Text("Correct"),
+                                                       
+                    dismissButton:
+                        .default(Text("Ok")))
+                case .incorrect:
+                    return Alert(title: Text("Wrong"),
+                                                       
+                    dismissButton:
+                        .default(Text("Ok")))
+                }
+                
+        
                 
             }
-            .alert(isPresented: $!correctA) {Alert(title: Text("Correct"),
-                                                   
-                dismissButton:
-                    .default(Text("Ok")))
+            
           
           
         }

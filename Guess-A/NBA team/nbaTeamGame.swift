@@ -70,12 +70,16 @@ struct nbaTeamGame: View {
                     return Alert(title: Text("Correct"),
                                                        
                     dismissButton:
-                        .default(Text("Ok")))
+                            .default(Text("Ok"), action: {randomNum1 = Int.random(in: 1..<8); randomNum2 = Int.random(in: 1..<8);
+                                randomNum3 = Int.random(in: 1..<8)
+                            })
+                    )
                 case .incorrect:
                     return Alert(title: Text("Wrong"),
                                                        
                     dismissButton:
-                        .default(Text("Ok")))
+                        .default(Text("Ok")
+                                ))
                 }
                 
         

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E63EC4C2891F4F70069B734 /* marvelGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E63EC4B2891F4F70069B734 /* marvelGame.swift */; };
+		5EB4F4C328B77D8900BEA9AB /* guessAMarvelCharacter.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5E63EC4B2891F4F70069B734 /* marvelGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelGame.swift; sourceTree = "<group>"; };
+		5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = guessAMarvelCharacter.xcassets; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */,
 				5E63EC4B2891F4F70069B734 /* marvelGame.swift */,
+				5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */,
 			);
 			path = "Marvel Character";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */,
+				5EB4F4C328B77D8900BEA9AB /* guessAMarvelCharacter.xcassets in Resources */,
 				C036653D2863DBC90096852E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

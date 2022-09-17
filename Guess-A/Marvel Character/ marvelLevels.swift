@@ -67,5 +67,9 @@ struct marvelLevels: View {
 struct marvelLevels_Previews: PreviewProvider {
     static var previews: some View {
         marvelLevels()
+        ContentView()
+            .preferredColorScheme(.dark)
+        ContentView()
+            .preferredColorScheme(.light)
     }
 }

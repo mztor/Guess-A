@@ -38,7 +38,7 @@ struct marvelLevels: View {
             VStack {
                 
                 VStack {
-                
+                    NavigationLink(destination: marvelGame(guess: "", level: "Beginner")) {
                         Text("Beginner")
                             .foregroundColor(.black)
                             .fontWeight(.bold)
@@ -46,7 +46,7 @@ struct marvelLevels: View {
                     }
                     .padding(1)
                     
-                    NavigationLink(destination: marvelGame(level: "Intermediate")) {
+                NavigationLink(destination: marvelGame(guess: "", level: "Intermediate")) {
                         Text("Intermediate")
                             .foregroundColor(.black)
                             .fontWeight(.bold)
@@ -54,21 +54,22 @@ struct marvelLevels: View {
                     }
                     .padding(40)
                    
+                    NavigationLink(destination: marvelGame(guess: "", level: "Advanced")) {
                         Text("Advanced")
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                             .background(RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 165, height: 50))
                     }
-                    .padding(20)
+                    .padding(1)
                 }
                 .padding(25)
+                }
             }
         }
+    }
 struct marvelLevels_Previews: PreviewProvider {
     static var previews: some View {
         marvelLevels()
-        ContentView()
-            .preferredColorScheme(.dark)
         ContentView()
             .preferredColorScheme(.light)
     }

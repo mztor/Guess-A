@@ -86,10 +86,15 @@ var body: some View {
         
             .padding()
             Spacer()
-    }
-   
     
+        .toolbar {
+            Button("Help"){
+                showHelp()
+                    }
+                }
+            }
         }
+
 struct marvelGame_Previews: PreviewProvider {
     static var previews: some View {
         marvelGame(guess: "", level: "")

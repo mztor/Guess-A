@@ -54,7 +54,7 @@ struct marvelLevels: View {
                     }
                     .padding(40)
                    
-                    NavigationLink(destination: marvelGame(guess: "", level: "Advanced")) {
+                NavigationLink(destination: marvelGame(guess: "", level: "Advanced")) {
                         Text("Advanced")
                             .foregroundColor(.black)
                             .fontWeight(.bold)
@@ -65,8 +65,16 @@ struct marvelLevels: View {
                 .padding(25)
                 }
             }
+                .navigationTitle("Guess A Marvel Character")
+                
+                .toolbar {
+                    Button("Help"){
+                        showHelp()
+            }
         }
     }
+}
+
 struct marvelLevels_Previews: PreviewProvider {
     static var previews: some View {
         marvelLevels()

@@ -12,14 +12,10 @@ import SwiftUI
 struct carBrandLevels: View {
     var body: some View {
         VStack {
-//            RoundedRectangle(cornerRadius: 100, style: .continuous)
-//                .frame(width: 414, height: 1)
-//                .padding(.bottom, 60)
             VStack {
                 Text("GUESS THE CAR BRAND")
                     .font(.title)
                     .padding(20)
-//                    .padding(.top, 40)
             }
                 VStack {
                     Text("Choose A")

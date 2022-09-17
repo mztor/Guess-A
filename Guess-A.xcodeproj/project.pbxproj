@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		308E758F28D568860066EF2C /* carBrandGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E758E28D568860066EF2C /* carBrandGame.swift */; };
+		30BD85E128D5757600C54E88 /* carBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD85E028D5757600C54E88 /* carBrand.swift */; };
+		30BD85E428D575E300C54E88 /* carBrandData.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BD85E328D575E300C54E88 /* carBrandData.json */; };
+		30BD85E628D5768C00C54E88 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD85E528D5768C00C54E88 /* ModelData.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
 		C036653D2863DBC90096852E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C036653C2863DBC90096852E /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		308E758E28D568860066EF2C /* carBrandGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carBrandGame.swift; sourceTree = "<group>"; };
+		30BD85E028D5757600C54E88 /* carBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carBrand.swift; sourceTree = "<group>"; };
+		30BD85E328D575E300C54E88 /* carBrandData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carBrandData.json; path = ../../../../../Desktop/carBrandData.json; sourceTree = "<group>"; };
+		30BD85E528D5768C00C54E88 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
 		C036653A2863DBC50096852E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30BD85DF28D5754400C54E88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30BD85E528D5768C00C54E88 /* ModelData.swift */,
+				30BD85E028D5757600C54E88 /* carBrand.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30BD85E228D575A700C54E88 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30BD85E328D575E300C54E88 /* carBrandData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C036652C2863DBC50096852E = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +181,8 @@
 			children = (
 				C0CC9A40286BF35100FF74C6 /* carBrandLevels.swift */,
 				308E758E28D568860066EF2C /* carBrandGame.swift */,
+				30BD85E228D575A700C54E88 /* Resources */,
+				30BD85DF28D5754400C54E88 /* Model */,
 			);
 			path = "Car Brand";
 			sourceTree = "<group>";
@@ -256,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */,
+				30BD85E428D575E300C54E88 /* carBrandData.json in Resources */,
 				C036653D2863DBC90096852E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0CC9A3D286BF30600FF74C6 /* playingCardView.swift in Sources */,
+				30BD85E128D5757600C54E88 /* carBrand.swift in Sources */,
 				C0CC9A45286BF3B200FF74C6 /* allBlacksPlayerView.swift in Sources */,
 				C0CC9A3B286BF2D800FF74C6 /* nbaTeamView.swift in Sources */,
 				C0CC9A41286BF35100FF74C6 /* carBrandLevels.swift in Sources */,
@@ -277,6 +304,7 @@
 				C0A98C96286D6187006BC2FA /* ToolbarView.swift in Sources */,
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C0CC9A3F286BF31700FF74C6 /* pokemonView.swift in Sources */,
+				30BD85E628D5768C00C54E88 /* ModelData.swift in Sources */,
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
 				C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,

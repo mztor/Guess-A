@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct carBrandGame: View {
+    @State private var guess = ""
+    @State private var buttonGuess = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            TextField("Enter Guess", text: $guess)
+                .padding()
+                .frame(width: 200.0)
+            
+            Button(action: {
+                self.buttonGuess = self.guess
+            }) {
+                Text("Submit Guess")
+                    .foregroundColor(.black)
+                    .frame(width: 60)
+                    .padding(.all)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            }
+            
+        }
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct dataLoader {
+struct ModelData {
     func loadJson(filename fileName: String) -> [carBrand]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: nil) {
             do {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let carBrands = dataLoader().loadJson(filename: "carBrandData.json")
+let carBrands = ModelData().loadJson(filename: "carBrandDataUpdated.json")
 var alreadyTried = [String]()
 var currentGuess: carBrand?
 

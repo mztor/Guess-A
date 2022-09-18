@@ -1,0 +1,144 @@
+{
+    "carBrand": [
+        {
+            "name": "Audi",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Germany in 1909. They are known for making popular models such as the R8, A-Series hatchback, and Q-Series SUV.",
+            "img_guess": "audi_guess",
+            "img_answer": "audi_ans"
+        },
+        {
+            "name": "Bentley",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in London, UK in 1919. They are known for making popular models such as the Bentayga, Flying Spur, and Continental GT.",
+            "img_guess": "bentley_guess",
+            "img_answer": "bentley_ans"
+        },
+        {
+            "name": "Bugatti",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in France in 1909. They are known for making popular models such as the Veyron, Chiron, and EB-110.",
+            "img_guess": "bugatti_guess",
+            "img_answer": "bugatti_ans"
+        },
+        {
+            "name": "Ferrari",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Italy in 1947. They are known for making popular models such as the Enzo, 458, and F40",
+            "img_guess": "ferrari_guess",
+            "img_answer": "ferrari_ans"
+        },
+        {
+            "name": "Ford",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in The United States in 1903. They are known for making popular models such as the Mustang, Focus, and Ranger.",
+            "img_guess": "ford_guess",
+            "img_answer": "ford_ans"
+        },
+        {
+            "name": "Chevrolet",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Michigan, United States in 1911. They are known for making popular models such as the Silverado, Comaro, and Corvette.",
+            "img_guess": "chevrolet_guess",
+            "img_answer": "cheverolet_ans"
+        },
+        {
+            "name": "Honda",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1948. They are known for making popular models such as the Civic, Integra, and Accord.",
+            "img_guess": "honda_guess",
+            "img_answer": "honda_ans"
+        },
+        {
+            "name": "Hyundai",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in South Korea in 1967. They are known for making popular models such as the i30, Kona, and Santa-Fe.",
+            "img_guess": "hyundai_guess",
+            "img_answer": "hyundai_ans"
+        },
+        {
+            "name": "Fiat",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Turin, Italy in 1899. They are known for making popular models such as the Tipo, 500, and Panda.",
+            "img_guess": "fiat_guess",
+            "img_answer": "fiat_ans"
+        },
+        {
+            "name": "Jeep",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in The United States in 1941. They are known for making popular models such as the Grand Cherokee, Trackhawk, and Wrangler.",
+            "img_guess": "jeep_guess",
+            "img_answer": "jeep_ans"
+        },
+        {
+            "name": "Kia",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in South Korea in 1944. They are known for making popular models such as the Stinger, Carnival, and Sportage.",
+            "img_guess": "kia_guess",
+            "img_answer": "kia_ans"
+        },
+        {
+            "name": "Lamborghini",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Italy in 1963. They are known for making popular models such as the Aventador, Huracan, and Urus.",
+            "img_guess": "lamborghini_guess",
+            "img_answer": "lamborghini_ans"
+        },
+        {
+            "name": "Lexus",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1989. They are known for making popular models such as the LFA, RX-Series SUV, and IS-Series Sedan.",
+            "img_guess": "lexus_guess",
+            "img_answer": "lexus_ans"
+        },
+        {
+            "name": "Mazda",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1930. They are known for making popular models such as the 3, CX-Series SUV, and 6.",
+            "img_guess": "mazda_guess",
+            "img_answer": "mazda_ans"
+        },
+        {
+            "name": "Land Rover",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in The United Kingdom in 1978. They are known for making popular models such as the Velar, Evoque, and Defender.",
+            "img_guess": "land_rover_guess",
+            "img_answer": "land_rover_ans"
+        },
+        {
+            "name": "Maserati",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Bologna, Italy in 1914. They are known for making popular models such as the Levante, Ghibli, and Quattroporte.",
+            "img_guess": "maserati_guess",
+            "img_answer": "maserati_ans"
+        },
+        {
+            "name": "Nissan",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1933. They are known for making popular models such as the GTR, Skyline, and X-TRAIL",
+            "img_guess": "nissan_guess",
+            "img_answer": "nissan_ans"
+        },
+        {
+            "name": "Subaru",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1953. They are known for making popular models such as the Impreza, Forester, and WRX.",
+            "img_guess": "subaru_guess",
+            "img_answer": "subaru_ans"
+        },
+        {
+            "name": "Suzuki",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1909. They are known for making popular models such as the Swift, Jimny, and Vitara.",
+            "img_guess": "suzuki_guess",
+            "img_answer": "suzuki_ans"
+        },
+        {
+            "name": "Toyota",
+            "difficulty": "easy",
+            "helpButtonDescription": "This brand was founded in Japan in 1937. They are known for making popular models such as the Corolla, Supra, and RAV-4.",
+            "img_guess": "toyota_guess",
+            "img_answer": "toyota_ans"
+        }
+    ]
+}

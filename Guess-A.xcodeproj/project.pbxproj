@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302256D728D74EA000B33915 /* carBrandDataUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 302256D628D74E9F00B33915 /* carBrandDataUpdated.json */; };
 		308E758F28D568860066EF2C /* carBrandGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E758E28D568860066EF2C /* carBrandGame.swift */; };
 		30BD85E128D5757600C54E88 /* carBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD85E028D5757600C54E88 /* carBrand.swift */; };
-		30BD85E428D575E300C54E88 /* carBrandData.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BD85E328D575E300C54E88 /* carBrandData.json */; };
 		30BD85E628D5768C00C54E88 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD85E528D5768C00C54E88 /* ModelData.swift */; };
-		30BD85E828D5996200C54E88 /* carBrandDataUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BD85E728D5996100C54E88 /* carBrandDataUpdated.json */; };
 		30BD85EA28D7363900C54E88 /* dataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD85E928D7363900C54E88 /* dataLoader.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
@@ -33,11 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302256D628D74E9F00B33915 /* carBrandDataUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carBrandDataUpdated.json; sourceTree = "<group>"; };
 		308E758E28D568860066EF2C /* carBrandGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carBrandGame.swift; sourceTree = "<group>"; };
 		30BD85E028D5757600C54E88 /* carBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carBrand.swift; sourceTree = "<group>"; };
-		30BD85E328D575E300C54E88 /* carBrandData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carBrandData.json; path = ../../../../../Desktop/carBrandData.json; sourceTree = "<group>"; };
 		30BD85E528D5768C00C54E88 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		30BD85E728D5996100C54E88 /* carBrandDataUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carBrandDataUpdated.json; path = ../../../../../Desktop/carBrandDataUpdated.json; sourceTree = "<group>"; };
 		30BD85E928D7363900C54E88 /* dataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataLoader.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
@@ -83,8 +81,7 @@
 		30BD85E228D575A700C54E88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				30BD85E728D5996100C54E88 /* carBrandDataUpdated.json */,
-				30BD85E328D575E300C54E88 /* carBrandData.json */,
+				302256D628D74E9F00B33915 /* carBrandDataUpdated.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,8 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */,
-				30BD85E428D575E300C54E88 /* carBrandData.json in Resources */,
-				30BD85E828D5996200C54E88 /* carBrandDataUpdated.json in Resources */,
+				302256D728D74EA000B33915 /* carBrandDataUpdated.json in Resources */,
 				C036653D2863DBC90096852E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

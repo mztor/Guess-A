@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "The-Wasp-CU-1024x540.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "The-Wasp-CU-1024x540.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

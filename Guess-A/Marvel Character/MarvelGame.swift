@@ -61,10 +61,18 @@ var body: some View {
                     }
                 }
             }
-
         VStack {
             Image(random)
+                .resizable()
+                .frame(width: 150, height: 150)
+                .scaledToFit()
                 .clipShape(Circle())
+                .overlay(Circle()
+                    .stroke(.black,lineWidth: 4))
+                .shadow(radius: 7)
+                .padding(0.2)
+
+
             
             Text(random)
             .padding(0.2)
@@ -75,18 +83,19 @@ var body: some View {
                     "Guess",
                     text: $guess
                     )
-                .onSubmit {
+                Button("Guess") {
+                   
+                }
+                .onTapGesture() {
                     if guess == random {
                         print("Correct")
-                          
                     }
                 }
             }
         }
-        
-            .padding()
-            Spacer()
-    
+        .padding()
+        Spacer()
+
         .toolbar {
             Button("Help"){
                 showHelp()

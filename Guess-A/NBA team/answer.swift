@@ -15,10 +15,10 @@ public var correctAnswer = Int.random(in: 1..<3)
 func generaterandomNum (){
     randomNum1 = Int.random(in: 1..<8)
     randomNum2 = Int.random(in: 1..<8)
-    while randomNum2 == randomNum1{
+    randomNum3 = Int.random(in: 1..<8)
+    while randomNum2 == randomNum1 || randomNum2 == randomNum3{
         randomNum2 = Int.random(in: 1..<8)
     }
-    randomNum3 = Int.random(in: 1..<8)
     while randomNum3 == randomNum2 || randomNum3 == randomNum1{
         randomNum3 = Int.random(in: 1..<8)
         

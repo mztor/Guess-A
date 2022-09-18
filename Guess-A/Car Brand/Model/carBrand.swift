@@ -6,21 +6,15 @@
 //
 
 import Foundation
-import SwiftUI
-import CoreLocation
 
-struct carBrand: Hashable, Codable {
+struct CarData: Decodable {
+    var carBrand: [carBrand]
+}
+
+struct carBrand: Decodable {
     var name: String
     var difficulty: String
     var helpButtonDescription: String
-    
-    private var img_guess: String
-    var imageGuess: Image {
-        Image(img_guess)
-    }
-    private var img_answer: String
-    var imageAnswer: Image {
-        Image(img_answer)
-    }
+    var img_guess: String
+    var img_answer: String
 }
-

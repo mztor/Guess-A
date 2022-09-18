@@ -24,6 +24,12 @@ func generaterandomNum (){
         
     }
 }
+func rearrangeButtons (){
+    while correctAnswer == 1 {
+        
+    }
+    
+}
 struct answer{
     
     

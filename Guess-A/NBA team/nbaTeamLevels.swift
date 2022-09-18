@@ -44,7 +44,7 @@ struct nbaTeamLevels: View {
             Spacer()
             VStack{
                 
-                NavigationLink(destination: nbaTeamGame(level: "Easy")) { Text("Easy")
+                NavigationLink(destination: nbaTeamGame1_0(level: "Easy")) { Text("Easy")
                     .foregroundColor(Color.black) }
                 .padding()
                 .overlay(
@@ -53,7 +53,7 @@ struct nbaTeamLevels: View {
                     )
                 
                 
-                NavigationLink(destination: nbaTeamGame(level: "Hard")) { Text("Hard")
+                NavigationLink(destination: nbaTeamGame1_0(level: "Hard")) { Text("Hard")
                     .foregroundColor(Color.black) }
                     .padding()
                 .overlay(

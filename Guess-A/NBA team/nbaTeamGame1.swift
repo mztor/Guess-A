@@ -30,7 +30,7 @@ struct nbaTeamGame1_0: View {
                 .border(.black, width: 2.0)
         }
             Button("Guess") {
-                if answers[randomNum1] == answers[randomNum1]{
+                if guess == answers[randomNum1]{
                     correctA.toggle()
                     self.activeAlert = .correct
                     currentScore = currentScore + 1

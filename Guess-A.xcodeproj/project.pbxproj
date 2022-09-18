@@ -191,12 +191,12 @@
 		C0CC9A39286BF2AF00FF74C6 /* NBA team */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */,
 				346E863828A4672C00A3FF20 /* nbaTeamGame.swift */,
-				34CBC59B28D709B10014347E /* nbaTeamGame1.swift */,
-				34A0229928D721F2009035F3 /* finalScreen.swift */,
 				346E863C28A5C7DC00A3FF20 /* questionBank.swift */,
 				346E863E28A5C82900A3FF20 /* answer.swift */,
+				C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */,
+				34CBC59B28D709B10014347E /* nbaTeamGame1.swift */,
+				34A0229928D721F2009035F3 /* finalScreen.swift */,
 			);
 			path = "NBA team";
 			sourceTree = "<group>";

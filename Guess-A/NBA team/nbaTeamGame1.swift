@@ -69,6 +69,23 @@ struct nbaTeamGame1_0: View {
 
 
         }
+        .toolbar {
+            Button() {
+                showHelpCard.toggle()
+            } label: {
+                Image(systemName: "questionmark.circle")
+            }
+            .alert(isPresented: $showHelpCard) {Alert(title: Text("Help!"), message: Text("To guess the team name input a team in the text field"),
+
+
+
+
+                dismissButton:
+                    .default(Text("Ok")))
+
+            }
+    }
+
         
     }
 }

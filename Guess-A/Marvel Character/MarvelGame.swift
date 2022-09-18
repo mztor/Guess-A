@@ -48,11 +48,12 @@ var body: some View {
             .font(.largeTitle)
             .fontWeight(.bold)
             .padding(0.2)
-             
-        Text("Rules: You will be given an image of a character to guess who the character is. You will have 15 guesses to try and guess who the character is. You will start with 15 points and every wrong guess you loose a point. The aim is to finish with the most points possible. Goodluck!")
-                .multilineTextAlignment(.center)
-                .padding(0.2)
-        
+       
+        if level == "Intermediate" {
+            Text("Rules: You will be given an image of a character to guess who the character is. You will have 15 guesses to try and guess who the character is. You will start with 15 points and every wrong guess you loose a point. The aim is to finish with the most points possible. Goodluck!")
+                    .multilineTextAlignment(.center)
+                    .padding(0.2)
+           
             .onAppear() {
                 if level == "Intermediate" {
                     arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"]
@@ -61,6 +62,7 @@ var body: some View {
                     }
                 }
             }
+        }
         VStack {
             Image(random)
                 .resizable()

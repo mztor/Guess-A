@@ -12,14 +12,12 @@ import AssetsLibrary
 struct marvelGame: View {
     @State var guess: String = ""
     var level: String
+    
     @State var message: String = ""
     @State var random: String = ""
     @State var categories: String = ""
+    var buttonGuess: String = "Guess"
     @State var arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"]
-    @State var arrayCategories = ["Avengers", "Villains", "Guardians"]
-    
-    
-    
 
 var body: some View {
 
@@ -55,56 +53,56 @@ var body: some View {
                     .padding(0.2)
            
             .onAppear() {
-                if level == "Intermediate" {
+                if level == "Intermediate" { //sets the array for the intermediate level
                     arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"]
-                    random = arrayChars.randomElement()!
-
+                    random = arrayChars.randomElement()! //used to generate a random index of the array set to set a random value which is to be guessed
                     }
                 }
             }
-        }
-        VStack {
-            Image(random)
-                .resizable()
-                .frame(width: 150, height: 150)
-                .scaledToFit()
-                .clipShape(Circle())
-                .overlay(Circle()
-                    .stroke(.black,lineWidth: 4))
-                .shadow(radius: 7)
-                .padding(0.2)
-
-
-            
-            Text(random)
+        Image(random)
+            .resizable()
+            .frame(width: 150, height: 150)
+            .scaledToFit()
+            .clipShape(Circle())
+            .overlay(Circle()
+                .stroke(.black,lineWidth: 4))
+            .shadow(radius: 7)
             .padding(0.2)
 
-            HStack {
-                Text("Guess:")
-                TextField(
-                    "Guess",
-                    text: $guess
-                    )
-                Button("Guess") {
-                   
-                }
-                .onTapGesture() {
-                    if guess == random {
-                        print("Correct")
-                    }
-                }
+        Text(random)
+        .padding(0.2)
+
+    VStack {
+        VStack {
+            TextField("Guess", text: $guess)
+                .multilineTextAlignment(.center)
+                .disableAutocorrection(true)
+            Spacer()
             }
         }
-        .padding()
+    .onSubmit {
+       checkGuess()
+        }
+    }
+        
+
         Spacer()
 
         .toolbar {
-            Button("Help"){
+            Button("Help") {
                 showHelp()
-                    }
                 }
             }
         }
+    public func checkGuess() {
+        if guess == random {
+            print("Correct")
+        } else {
+            print ("Wrong")
+            }
+        }
+    }
+    
 
 struct marvelGame_Previews: PreviewProvider {
     static var previews: some View {

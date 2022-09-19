@@ -9,8 +9,10 @@ import SwiftUI
 enum ActiveAlert{
     case correct, incorrect, gameCorrect, gameIncorrect
 }
+let answers = ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
 struct nbaTeamGame1_0: View {
     var level: String
+    var finalPercentage =  (currentScore/maxScore)*100
     @State var finishViewNavigate = false
     @State private var showHelpCard = false
     @State private var correctA = false
@@ -30,14 +32,12 @@ struct nbaTeamGame1_0: View {
             TextField("Guess", text: $guess)
                 .border(.black, width: 2.0)
         }
-            ZStack{
-                NavigationLink(destination: nbaTeamLevels(), isActive: $finishViewNavigate) { Text("") }
-             
+        
             Button {
                 if guess == answers[randomNum1] && roundCount != 8{
                     correctA.toggle()
                     self.activeAlert = .correct
-                    currentScore = currentScore + 1
+                    currentScore += 1
                     roundCount = roundCount + 1
                 }
                 else if guess != answers[randomNum1] && roundCount != 8 {
@@ -45,9 +45,13 @@ struct nbaTeamGame1_0: View {
                     self.activeAlert = .incorrect
                     roundCount = roundCount + 1
                 }
-                else if guess == answers[randomNum1] && roundCount == 8 {
+                else if
+                    guess == answers[randomNum1]
+                        &&
+                            roundCount == 8
+                {
                     correctA.toggle()
-                    currentScore = currentScore + 1
+                    currentScore += 1
                     self.activeAlert = .gameCorrect
                 }
                 else if
@@ -58,7 +62,7 @@ struct nbaTeamGame1_0: View {
                 }
                 } label: {
                     Text("Guess")
-        }
+                }
         .alert(isPresented: $correctA) {
             switch activeAlert{
             case .correct:
@@ -79,13 +83,23 @@ struct nbaTeamGame1_0: View {
                                      })
                                      )
             case .gameCorrect:
-                return Alert(title: Text("game finished"),
+                return Alert(title: Text("Game is Finished"),
+                    message:
+                    Text("Final Score is") +
+                    Text(String(finalPercentage)) +
+                    Text("%"),
                 dismissButton:
                 .default(Text("Ok"),
-                         action: {finishViewNavigate.toggle()}
+                         action: {finishViewNavigate.toggle()
+                }
                              ))
             case .gameIncorrect:
-                return Alert(title: Text("game finished"),
+                return Alert(title:
+                    Text("Game is Finished"),
+                    message:
+                    Text("Final Score is ") +
+                    Text(String(finalPercentage)) +
+                    Text("%"),
                 dismissButton:
                 .default(Text("Ok"),
                 action: {finishViewNavigate.toggle()}
@@ -95,7 +109,7 @@ struct nbaTeamGame1_0: View {
 
 
         }
-                             }
+            
         .toolbar {
             Button() {
                 showHelpCard.toggle()
@@ -115,9 +129,12 @@ struct nbaTeamGame1_0: View {
 
         
     }
+            NavigationLink(destination: nbaTeamLevels(), isActive: $finishViewNavigate) { Text("") }
+        
 }
     
                              }
+
 
 
 

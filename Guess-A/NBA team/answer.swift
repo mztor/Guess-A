@@ -15,3 +15,4 @@ public var roundCount = 0
 func generaterandomNum (){
     randomNum1 = Int.random(in: 1..<8)
 }
+

@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		346E863928A4672C00A3FF20 /* nbaTeamGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E863828A4672C00A3FF20 /* nbaTeamGame.swift */; };
-		346E863D28A5C7DC00A3FF20 /* questionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E863C28A5C7DC00A3FF20 /* questionBank.swift */; };
 		346E863F28A5C82900A3FF20 /* answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E863E28A5C82900A3FF20 /* answer.swift */; };
-		34A0229A28D721F2009035F3 /* finalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0229928D721F2009035F3 /* finalScreen.swift */; };
 		34CBC59C28D709B10014347E /* nbaTeamGame1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CBC59B28D709B10014347E /* nbaTeamGame1.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
@@ -34,9 +32,7 @@
 
 /* Begin PBXFileReference section */
 		346E863828A4672C00A3FF20 /* nbaTeamGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nbaTeamGame.swift; sourceTree = "<group>"; };
-		346E863C28A5C7DC00A3FF20 /* questionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionBank.swift; sourceTree = "<group>"; };
 		346E863E28A5C82900A3FF20 /* answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answer.swift; sourceTree = "<group>"; };
-		34A0229928D721F2009035F3 /* finalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalScreen.swift; sourceTree = "<group>"; };
 		34CBC59B28D709B10014347E /* nbaTeamGame1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nbaTeamGame1.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
@@ -192,11 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				346E863828A4672C00A3FF20 /* nbaTeamGame.swift */,
-				346E863C28A5C7DC00A3FF20 /* questionBank.swift */,
 				346E863E28A5C82900A3FF20 /* answer.swift */,
 				C0CC9A3A286BF2D800FF74C6 /* nbaTeamLevels.swift */,
 				34CBC59B28D709B10014347E /* nbaTeamGame1.swift */,
-				34A0229928D721F2009035F3 /* finalScreen.swift */,
 			);
 			path = "NBA team";
 			sourceTree = "<group>";
@@ -293,8 +287,6 @@
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 				C0CC9A3F286BF31700FF74C6 /* pokemonLevels.swift in Sources */,
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
-				34A0229A28D721F2009035F3 /* finalScreen.swift in Sources */,
-				346E863D28A5C7DC00A3FF20 /* questionBank.swift in Sources */,
 				34CBC59C28D709B10014347E /* nbaTeamGame1.swift in Sources */,
 				346E863F28A5C82900A3FF20 /* answer.swift in Sources */,
 				C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */,

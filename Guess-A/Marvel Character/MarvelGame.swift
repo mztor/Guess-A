@@ -80,28 +80,26 @@ var body: some View {
             Spacer()
             }
         }
-    .onSubmit {
-       checkGuess()
+        VStack {
+        Button("Guess") {
+                if guess == random {
+                    print("Correct")
+                } else {
+                    print("Wrong")
+                }
+            }
         }
     }
-        
 
         Spacer()
 
         .toolbar {
             Button("Help") {
-                showHelp()
                 }
             }
         }
-    public func checkGuess() {
-        if guess == random {
-            print("Correct")
-        } else {
-            print ("Wrong")
-            }
-        }
     }
+
     
 
 struct marvelGame_Previews: PreviewProvider {

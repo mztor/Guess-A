@@ -51,7 +51,7 @@ struct marvelLevels: View {
                     }
                     .padding(1)
                     
-                NavigationLink(destination: marvelGame(guess: "", level: "Intermediate")) {
+                NavigationLink(destination: marvelGame(guess: "", level: "Intermediate")) { //the navigation link that goes to the intermediate game - the one which has been completely coded
                         Text("Intermediate")
                             .foregroundColor(.black)
                             .fontWeight(.bold)
@@ -73,7 +73,7 @@ struct marvelLevels: View {
                 .navigationTitle("Marvel Characters")
                 
             .toolbar {
-                Button("?") {
+                Button("?") { //help button providing online help
                     message = ("Select the level to go to the game screen for individual levels using the buttons on the screen.")
                     showingAlert.toggle()
 
@@ -96,5 +96,7 @@ struct marvelLevels_Previews: PreviewProvider {
         marvelLevels()
         ContentView()
             .preferredColorScheme(.light)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }

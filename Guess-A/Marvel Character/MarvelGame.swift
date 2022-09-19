@@ -12,7 +12,6 @@ import AssetsLibrary
 struct marvelGame: View {
     @State var guess: String = ""
     @State var showingAlert = false
-    @State var score = 15
 
     var level: String
     
@@ -51,14 +50,14 @@ struct marvelGame: View {
                     .fontWeight(.bold)
                     .padding(0.2)
                
-                if level == "Intermediate" {
+                if level == "Intermediate" { //checks the level selected and decides which text and rules should be displayed.
                     Text("Rules: You will be given an image of character and the aim is to try and guess which marvel character it is. Goodluck!")
                             .multilineTextAlignment(.center)
                             .padding()
                    
                     .onAppear() {
                         if level == "Intermediate" { //sets the array for the intermediate level
-                            arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"]
+                            arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"] //intermediate array of characters
                             random = arrayChars.randomElement()! //used to generate a random index of the array set to set a random value which is to be guessed
                             }
                         }
@@ -85,13 +84,13 @@ struct marvelGame: View {
                     Spacer()
                 }
 
-            Button("Guess") {
+            Button("Guess") { //submit guess button - begins the checking process (result is shown as an alert)
                 if guess == random {
                     message = ("Your guess was correct! Congrats")
                 } else {
                     message = ("You guess was incorrect. Please Try Again")
                 }
-                showingAlert.toggle()
+                showingAlert.toggle() //allows for message to be displayed as an alert on the screen.
 
             }
             Spacer()
@@ -109,9 +108,9 @@ struct marvelGame: View {
         }
 
         .toolbar {
-            Button("?") {
-                message = ("To play, type in your guess and press guess. It will then determine whether your guess is correct or not.")
-                showingAlert.toggle()
+            Button("?") { //online help for game function - intermediate
+                message = ("To play: Type in your guess and press guess. It will then determine whether your guess is correct or not.")
+                showingAlert.toggle() //allows the help to be flashed on the game screen as an alert
 
                 }
             .alert(isPresented: $showingAlert) {
@@ -136,6 +135,8 @@ struct marvelGame_Previews: PreviewProvider {
         marvelGame(guess: "", level: "")
         ContentView()
             .preferredColorScheme(.light)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }
 

@@ -54,8 +54,6 @@ struct carBrandGame: View {
             }
             HStack {
                 TextField("Enter Guess:", text: $other)
-//
-                    //.onSubmit({guessSubmitted()})
                     .padding()
                     .frame(width: 200.0)
                     .overlay {
@@ -65,7 +63,7 @@ struct carBrandGame: View {
                     .padding()
                 
                 Button(action: {
-                    if (other == currentGuess.name) {
+                    if (other.caseInsensitiveCompare(currentGuess.name) == .orderedSame) {
                         if (!result) {
                             if (currentGuess.name != other) {
                                 level = level + 1

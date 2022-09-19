@@ -73,9 +73,7 @@ struct marvelGame: View {
                     Spacer()
                     .padding(0.2)
                
-
-
-                
+               
                 VStack {
                     TextField("Guess", text: $guess)
                         .keyboardType(.default)
@@ -93,7 +91,8 @@ struct marvelGame: View {
                 showingAlert.toggle() //allows for message to be displayed as an alert on the screen.
 
             }
-            Spacer()
+                
+
                 
             .alert(isPresented: $showingAlert) {
                 Alert(
@@ -105,6 +104,11 @@ struct marvelGame: View {
                     })
                 )
             }
+
+                Button("Testing Mode") {
+                    message = (random)
+                    showingAlert.toggle()
+                }
         }
 
         .toolbar {

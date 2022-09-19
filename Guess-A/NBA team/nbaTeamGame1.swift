@@ -7,10 +7,11 @@
 
 import SwiftUI
 enum ActiveAlert{
-    case correct, incorrect
+    case correct, incorrect, gameCorrect, gameIncorrect
 }
 struct nbaTeamGame1_0: View {
     var level: String
+    @State var finishViewNavigate = false
     @State private var showHelpCard = false
     @State private var correctA = false
     @State var activeAlert: ActiveAlert = .incorrect
@@ -29,20 +30,34 @@ struct nbaTeamGame1_0: View {
             TextField("Guess", text: $guess)
                 .border(.black, width: 2.0)
         }
-            Button("Guess") {
-                if guess == answers[randomNum1]{
+            ZStack{
+                NavigationLink(destination: nbaTeamLevels(), isActive: $finishViewNavigate) { Text("") }
+             
+            Button {
+                if guess == answers[randomNum1] && roundCount != 8{
                     correctA.toggle()
                     self.activeAlert = .correct
                     currentScore = currentScore + 1
+                    roundCount = roundCount + 1
                 }
-                
-                else {
+                else if guess != answers[randomNum1] && roundCount != 8 {
                     correctA.toggle()
                     self.activeAlert = .incorrect
+                    roundCount = roundCount + 1
                 }
-            }
-            
-            
+                else if guess == answers[randomNum1] && roundCount == 8 {
+                    correctA.toggle()
+                    currentScore = currentScore + 1
+                    self.activeAlert = .gameCorrect
+                }
+                else if
+                    guess != answers[randomNum1] &&
+                    roundCount == 8 {
+                        correctA.toggle()
+                        self.activeAlert = .gameIncorrect
+                }
+                } label: {
+                    Text("Guess")
         }
         .alert(isPresented: $correctA) {
             switch activeAlert{
@@ -57,18 +72,30 @@ struct nbaTeamGame1_0: View {
                 )
             case .incorrect:
                 return Alert(title: Text("Wrong"),
-
-        dismissButton:
-        .default(Text("Ok"),
-            action: {
-            generaterandomNum()
-            })
+                             dismissButton:
+                             .default(Text("Ok"),
+                                 action: {
+                                 generaterandomNum()
+                                     })
                                      )
+            case .gameCorrect:
+                return Alert(title: Text("game finished"),
+                dismissButton:
+                .default(Text("Ok"),
+                         action: {finishViewNavigate.toggle()}
+                             ))
+            case .gameIncorrect:
+                return Alert(title: Text("game finished"),
+                dismissButton:
+                .default(Text("Ok"),
+                action: {finishViewNavigate.toggle()}
+                                          ))
             }
 
 
 
         }
+                             }
         .toolbar {
             Button() {
                 showHelpCard.toggle()
@@ -90,7 +117,7 @@ struct nbaTeamGame1_0: View {
     }
 }
     
-
+                             }
 
 
 
@@ -101,3 +128,4 @@ struct nbaTeamGame1_0_Previews: PreviewProvider {
         nbaTeamGame1_0(level: "")
     }
 }
+

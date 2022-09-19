@@ -109,7 +109,7 @@ struct marvelGame: View {
         }
 
         .toolbar {
-            Button("Help") {
+            Button("?") {
                 message = ("To play, type in your guess and press guess. It will then determine whether your guess is correct or not.")
                 showingAlert.toggle()
 

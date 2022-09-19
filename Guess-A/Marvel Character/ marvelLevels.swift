@@ -73,7 +73,7 @@ struct marvelLevels: View {
                 .navigationTitle("Marvel Characters")
                 
             .toolbar {
-                Button("Help") {
+                Button("?") {
                     message = ("Select the level to go to the game screen for individual levels using the buttons on the screen.")
                     showingAlert.toggle()
 

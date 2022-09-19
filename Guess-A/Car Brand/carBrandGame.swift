@@ -34,31 +34,31 @@ struct carBrandGame: View {
                 .frame(width: 200, height: 200)
                 .overlay {
                     RoundedRectangle(cornerRadius: 2).stroke(.black, lineWidth: 4)
-                        
+                    
                 }
                 .padding()
             
             
             
-            .toolbar {
-                ToolbarItem {
-                    HStack {
-                        Text("EASY - Level \(level)")
-                            .font(.title)
-                        NavigationLink(destination: helpScreen(carBrand: currentGuess)) {
-                            Image(systemName: "questionmark.circle")
-                                .font(.largeTitle)
+                .toolbar {
+                    ToolbarItem {
+                        HStack {
+                            Text("EASY - Level \(level)")
+                                .font(.title)
+                            NavigationLink(destination: helpScreen(carBrand: currentGuess)) {
+                                Image(systemName: "questionmark.circle")
+                                    .font(.largeTitle)
+                            }
                         }
                     }
                 }
-            }
             HStack {
                 TextField("Enter Guess:", text: $other)
                     .padding()
                     .frame(width: 200.0)
                     .overlay {
-                            RoundedRectangle(cornerRadius: 1).stroke(.black, lineWidth: 2)
-                    .keyboardType(.default)
+                        RoundedRectangle(cornerRadius: 1).stroke(.black, lineWidth: 2)
+                            .keyboardType(.default)
                     }
                     .padding()
                 
@@ -89,7 +89,7 @@ struct carBrandGame: View {
                 }
             }
             Button("Test Mode") {
-              testDetails.toggle()
+                testDetails.toggle()
             }
             if testDetails {
                 Text(currentGuess.name)
@@ -107,7 +107,7 @@ struct carBrandGame: View {
 struct carBrandGame_Previews: PreviewProvider {
     static var previews: some View {
         carBrandGame()
-.previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portrait)
     }
 }
 

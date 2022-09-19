@@ -398,51 +398,51 @@ struct playingCardGame: View {
                                 Text("")
                             }
                         
-                        Button {  //submission button
-                            
-                            guessCounter += 1
-                            checkGuesses()
-                            
-                            if correctOrNot == "correct" {
+                            Button {  //submission button
                                 
-                                self.activeAlert = .correct
-                                generateMaxScore()
-                                generateRoundScore() //creates pCardPointCounter variable for finish screen
+                                guessCounter += 1
+                                checkGuesses()
                                 
-                            } else if correctOrNot == "no" {
+                                if correctOrNot == "correct" {
+                                    
+                                    self.activeAlert = .correct
+                                    generateMaxScore()
+                                    generateRoundScore() //creates pCardPointCounter variable for finish screen
+                                    
+                                } else if correctOrNot == "no" {
+                                    
+                                    self.activeAlert = .incorrect
+                                }
+                                if guessCounter == 14 {
+                                    
+                                    self.activeAlert = .failed
+                                }
+                                showCorrectnessAlert.toggle()
                                 
-                                self.activeAlert = .incorrect
+                            } label: {
+                                
+                                Text("ENTER")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.green)
                             }
-                            if guessCounter == 14 {
+                            .alert(isPresented: $showCorrectnessAlert) {
                                 
-                                self.activeAlert = .failed
+                                switch activeAlert { //chooses one of the below alerts depending on correctness of guess. Also shows alert for when game is failed.
+                                    
+                                case .correct:
+                                    
+                                    return Alert(title: Text("Correct!"), message: Text("You guessed the playing Card! 🥳"), dismissButton: .default(Text("Next"), action: { finishViewNavigate.toggle()
+                                    }))
+                                case .incorrect:
+                                    
+                                    return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Try Again")))
+                                case .failed:
+                                    
+                                    return Alert(title: Text("Game Failed."), message: Text("The Card was " + valuesArray[randomValueNum] + " of " + suitesArray[randomSuiteNum] + ". " + "You guessed too many times. 💀"), dismissButton: .default(Text("Try Again"), action: {
+                                        levelsViewNavigate.toggle()
+                                    }))
+                                }
                             }
-                            showCorrectnessAlert.toggle()
-                            
-                        } label: {
-                            
-                            Text("ENTER")
-                                .font(.largeTitle)
-                                .foregroundColor(.green)
-                        }
-                        .alert(isPresented: $showCorrectnessAlert) {
-                            
-                            switch activeAlert { //chooses one of the below alerts depending on correctness of guess. Also shows alert for when game is failed.
-                                
-                            case .correct:
-                                
-                                return Alert(title: Text("Correct!"), message: Text("You guessed the playing Card! 🥳"), dismissButton: .default(Text("Next"), action: { finishViewNavigate.toggle()
-                                }))
-                            case .incorrect:
-                                
-                                return Alert(title: Text("Incorrect!"), message: Text("You guessed incorrectly. 😢"), dismissButton: .default(Text("Try Again")))
-                            case .failed:
-                                
-                                return Alert(title: Text("Game Failed."), message: Text("The Card was " + valuesArray[randomValueNum] + " of " + suitesArray[randomSuiteNum] + ". " + "You guessed too many times. 💀"), dismissButton: .default(Text("Try Again"), action: {
-                                    levelsViewNavigate.toggle()
-                                }))
-                            }
-                        }
                         .padding(.horizontal)
                         }
                     }

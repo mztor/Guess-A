@@ -71,12 +71,12 @@ struct marvelGame: View {
                     .overlay(Circle()
                         .stroke(.black,lineWidth: 4))
                     .shadow(radius: 7)
+                    Spacer()
                     .padding(0.2)
+               
 
-                Text(random)
-                .padding(0.2)
 
-            VStack {
+                
                 VStack {
                     TextField("Guess", text: $guess)
                         .keyboardType(.default)
@@ -84,12 +84,12 @@ struct marvelGame: View {
                         .disableAutocorrection(true)
                     Spacer()
                 }
-            }
+
             Button("Guess") {
                 if guess == random {
-                    message = ("Correct")
+                    message = ("Your guess was correct! Congrats")
                 } else {
-                    message = ("Wrong")
+                    message = ("You guess was incorrect. Please Try Again")
                 }
                 showingAlert.toggle()
 

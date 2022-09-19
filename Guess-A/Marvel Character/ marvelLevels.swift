@@ -65,7 +65,7 @@ struct marvelLevels: View {
                 .padding(25)
                 }
             }
-                .navigationTitle("Guess A Marvel Character")
+                .navigationTitle("Marvel Characters")
                 
                 .toolbar {
                     Button("Help"){

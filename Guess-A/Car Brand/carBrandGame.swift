@@ -65,7 +65,7 @@ struct carBrandGame: View {
                 Button(action: {
                     if (other.caseInsensitiveCompare(currentGuess.name) == .orderedSame) {
                         if (!result) {
-                            if (currentGuess.name != other) {
+                            if (currentGuess.name.caseInsensitiveCompare(other) != .orderedSame) {
                                 level = level + 1
                             }
                             result.toggle()

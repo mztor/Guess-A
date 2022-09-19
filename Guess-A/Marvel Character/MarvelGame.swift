@@ -12,6 +12,8 @@ import AssetsLibrary
 struct marvelGame: View {
     @State var guess: String = ""
     @State var showingAlert = false
+    @State var score = 15
+
     var level: String
     
     @State var message: String = ""
@@ -23,7 +25,6 @@ struct marvelGame: View {
     @State var arrayChars = ["Ant Man", "Black Panther", "Black Widow", "Captain America", "Captain Marvel", "Doctor Strange", "Falcon", "Groot", "Hawkeye", "Hulk", "Iron Man", "Spider Man", "Thanos", "Thor", "Vision", "Wasp"]
     
     var body: some View {
-        NavigationView {
             VStack {
                 VStack {
                     Text("GUESS")
@@ -51,7 +52,7 @@ struct marvelGame: View {
                     .padding(0.2)
                
                 if level == "Intermediate" {
-                    Text("Rules: You'll be given an image of a character. You'll  have 15 guesses to guess who the character is. You'll start with 15 points and with every wrong guess you lose a point. Good luck!")
+                    Text("Rules: You will be given an image of character and the aim is to try and guess which marvel character it is. Goodluck!")
                             .multilineTextAlignment(.center)
                             .padding()
                    
@@ -78,6 +79,7 @@ struct marvelGame: View {
             VStack {
                 VStack {
                     TextField("Guess", text: $guess)
+                        .keyboardType(.default)
                         .multilineTextAlignment(.center)
                         .disableAutocorrection(true)
                     Spacer()
@@ -89,8 +91,9 @@ struct marvelGame: View {
                 } else {
                     message = ("Wrong")
                 }
+                showingAlert.toggle()
+
             }
-            showingAlert.toggle()
             Spacer()
                 
             .alert(isPresented: $showingAlert) {
@@ -105,14 +108,25 @@ struct marvelGame: View {
             }
         }
 
-//        .toolbar {
-//            Button("Help") {
-//                }
-//            }
+        .toolbar {
+            Button("Help") {
+                message = ("To play, type in your guess and press guess. It will then determine whether your guess is correct or not.")
+                showingAlert.toggle()
+
+                }
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text(""), message: Text(message),
+                        dismissButton: .default(Text(caption), action:{
+                    })
+                )
+            }
         }
+       
     }
-    
 }
+
+
 
 
     

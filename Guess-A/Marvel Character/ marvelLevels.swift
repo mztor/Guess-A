@@ -10,6 +10,11 @@ import UIKit
 import Combine
 
 struct marvelLevels: View {
+    @State var showingAlert = false
+    @State var message: String = ""
+    @State var buttonGuess: String = "Guess"
+    @State var caption = "OK"
+    
     var body: some View {
         VStack {
             VStack {
@@ -67,9 +72,20 @@ struct marvelLevels: View {
             }
                 .navigationTitle("Marvel Characters")
                 
-                .toolbar {
-                    Button("Help"){
-                        showHelp()
+            .toolbar {
+                Button("Help") {
+                    message = ("Select the level to go to the game screen for individual levels using the buttons on the screen.")
+                    showingAlert.toggle()
+
+                    }
+                
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text(""), message: Text(message),
+                            dismissButton: .default(Text(caption), action:{
+                            
+                    })
+                )
             }
         }
     }

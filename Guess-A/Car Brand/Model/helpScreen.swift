@@ -9,14 +9,8 @@ import Foundation
 import SwiftUI
 
 struct helpScreen: View {
+    var carBrand: carBrand
     var body: some View {
-        Text("Hello, World")
-    }
-}
-
-struct helpScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        helpScreen()
-.previewInterfaceOrientation(.portrait)
+        Text("How to play Guess-A Car Brand Game: \n\nAnalyse the photo displayed and enter your guess of what you think is the name of the brand.\n\n \(carBrand.helpButtonDescription)")//continue with another \n\n and bring in the helpButtonDescription from the json
     }
 }

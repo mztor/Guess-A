@@ -11,6 +11,9 @@ let carBrands = ModelData().loadJson(filename: "carBrandDataUpdated.json")
 var alreadyTried = [String]()
 var currentGuess: carBrand?
 var carGuessVisible = false
+var level = 1
+
+//let currentGuess = getCarBrand()
 
 struct carBrandGame: View {
     @State var guess = ""
@@ -20,21 +23,9 @@ struct carBrandGame: View {
     
     let currentGuess = getCarBrand()
     
+    
     var body: some View {
         VStack {
-            
-            
-            NavigationLink(destination: helpScreen()) {
-                Text("Help")
-//                    .toolbar {
-//                        ToolbarItem {
-//                            Button("Help") {
-//                                helpScreen()
-//                            }
-//                        }
-                    }
-            }
-            
             Image(currentGuess.img_guess)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
@@ -42,16 +33,45 @@ struct carBrandGame: View {
                 .overlay {
                     RoundedRectangle(cornerRadius: 2).stroke(.black, lineWidth: 4)
                 }
+            
+                    .toolbar {
+                        ToolbarItem {
+                            HStack {
+                                Text("EASY - Level \(level)")
+                                    .font(.title)
+                                NavigationLink(destination: helpScreen(carBrand: currentGuess)) {
+                                    Image(systemName: "questionmark.circle")
+                                        .font(.largeTitle)
+                                }
+                            }
+                        }
+                    }
+                }
+            
+            
+
             HStack {
-                Text("Enter Guess:")
-                TextField("Enter Guess", text: $other)
-                    .onSubmit({guessSubmitted()})
+                TextField("Enter Guess:", text: $other)
+//
+                    //.onSubmit({guessSubmitted()})
                     .padding()
                     .frame(width: 200.0)
+                    .overlay {
+                            RoundedRectangle(cornerRadius: 1).stroke(.black, lineWidth: 2)
                     .keyboardType(.default)
+                    }
                 
                 Button(action: {
-                    self.buttonGuess = self.guess
+                    self.buttonGuess = self.other
+                    if (self.guess == currentGuess.name) {
+                        level = level + 1
+                        //getCarBrand()
+                    }
+                        
+                    // if buttonGuess == carBrand.name
+                    //    increment the level
+                    //    go to the next picture
+                    
                 }) {
                     Text("Submit Guess")
                         .foregroundColor(.black)
@@ -61,32 +81,6 @@ struct carBrandGame: View {
                         .cornerRadius(10)
                 }
             }
-            
-            
-//            Image("ferrari_guess")
-//                .resizable(resizingMode: .stretch)
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 200, height: 200)
-//                .overlay {
-//                    RoundedRectangle(cornerRadius: 2).stroke(.black, lineWidth: 4)
-//                }
-//
-//            HStack {
-//                TextField("Enter Guess", text: $guess)
-//                    .padding()
-//                    .frame(width: 200.0)
-//
-//                Button(action: {
-//                    self.buttonGuess = self.guess
-//                }) {
-//                    Text("Submit Guess")
-//                        .foregroundColor(.black)
-//                        .frame(width: 60)
-//                        .padding(.all)
-//                        .background(Color.blue)
-//                        .cornerRadius(10)
-//                }
-//            }
         }
     }
 

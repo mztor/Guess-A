@@ -24,60 +24,67 @@ struct letterGame: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                VStack {
-                
-                    Text("\(score)/\(startScore)") //displays the user's remaining guesses out of their total allowed guesses
-                    TextField("Guess", text:$guess) //creates the text field for user input
-                        .font(.system(size: 25))
-                        .multilineTextAlignment(.center)
-                        .autocapitalization(.none) //allows the input of lowercase letters
-                        .padding()
-                        .keyboardType(.alphabet) //restricts the keyboard to letters only
-                 
-                        .padding()
+            VStack {
+                Text("GUESS \n -A- \n LETTER")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.teal)
                     
-                    Button("Check guess") {
-                        if guess == random {
-                            message = ("Correct! You finished with a score of: \(score)")
-                            caption = "Play again" //this message congradulates the user
-                        } else if level == "Easy" && guess > random {
-                            message = ("Wrong! The actual letter is: closer to 'a'")
-                            score = score - 1 //checks if the user is in the 'Easy' level, and is too far up the alphabet
-                        } else if level == "Easy" && guess < random {
-                            message = ("Wrong! The actual letter is: closer to 'z'")
-                            score = score - 1 //checks if the user is in the 'Easy' level, and is too far down the alphabet
-                        } else if level == "Medium" && guess > random {
-                            message = ("Wrong! The actual letter is closer to 'a' AND/OR is upper")
-                            score = score - 1 //checks if the user is in the 'Medium' level, and is too far up the alphabet
-                        } else if level == "Medium" && guess < random {
-                            message = ("Wrong! The actual letter is closer to 'z' AND/OR is lowercase")
-                            score = score - 1 //checks if the user is in the 'Medium' level, and is too far down the alphabet
-                        } else if level == "Hard" && guess != random {
-                            message = ("Wrong!")
-                            score = score - 1 //checks if the user is in the 'Hard' level, and is wrong
-                        } else if guess == " " {
-                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for a space
-                        } else {
-                            message = ("Make sure you enter a valid letter!") //stops the program deducting a point for an empty text field
-                        }
-                        
-                        guesses = guesses + "\n" + guess
-                        
-                        if score == 0 { //checks if the user is out of guesses
-                            message = ("Wrong! You're out of guesses")
-                            caption = "Play again"
-                        }
-                        
-                        showingAlert.toggle()
-                        guess = ""
-                    }
                     .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(.blue, lineWidth: 2))
-                    .foregroundColor(.black)
+                
+                Text("\(score)/\(startScore)")
+                    .fontWeight(.semibold) //displays the user's remaining guesses out of their total allowed guesses
+                TextField("Guess", text:$guess) //creates the text field for user input
+                    .font(.system(size: 25))
+                    .multilineTextAlignment(.center)
+                    .autocapitalization(.none) //allows the input of lowercase letters
+                    .padding()
+                    .keyboardType(.alphabet) //restricts the keyboard to letters only
+                .padding()
+                
+                Button("Check guess") {
+                    if guess == random {
+                        message = ("Correct! You finished with a score of \(score)")
+                        caption = "Play again" //this message congradulates the user
+                    } else if level == "Easy" && guess > random {
+                        message = ("Wrong! The actual letter is: closer to 'a'")
+                        score = score - 1 //checks if the user is in the 'Easy' level, and is too far up the alphabet
+                    } else if level == "Easy" && guess < random {
+                        message = ("Wrong! The actual letter is: closer to 'z'")
+                        score = score - 1 //checks if the user is in the 'Easy' level, and is too far down the alphabet
+                    } else if level == "Medium" && guess > random {
+                        message = ("Wrong! The actual letter is closer to 'a' AND/OR is upper")
+                        score = score - 1 //checks if the user is in the 'Medium' level, and is too far up the alphabet
+                    } else if level == "Medium" && guess < random {
+                        message = ("Wrong! The actual letter is closer to 'z' AND/OR is lowercase")
+                        score = score - 1 //checks if the user is in the 'Medium' level, and is too far down the alphabet
+                    } else if level == "Hard" && guess != random {
+                        message = ("Wrong!")
+                        score = score - 1 //checks if the user is in the 'Hard' level, and is wrong
+                    } else if guess == " " {
+                        message = ("Make sure you enter a valid letter!") //stops the program deducting a point for a space
+                    } else {
+                        message = ("Make sure you enter a valid letter!") //stops the program deducting a point for an empty text field
+                    }
                     
-                    Text(guesses) //displays all the user's past guesses in the round
+                    guesses = guesses + "\n" + guess
+                    
+                    if score == 0 { //checks if the user is out of guesses
+                        message = ("Wrong! You're out of guesses")
+                        caption = "Play again"
+                    }
+                    
+                    showingAlert.toggle()
+                    guess = ""
                 }
+                .padding()
+                .overlay(RoundedRectangle(cornerRadius: 16).stroke(.teal, lineWidth: 2))
+                .foregroundColor(.black)
+                
+                Text(guesses) //displays all the user's past guesses in the round
+                
+                Spacer()
             }
         }
         

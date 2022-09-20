@@ -10,6 +10,8 @@ import SwiftUI
 
 struct helpScreen: View {
     var carBrand: carBrand
+    
+    //The view for displaying the help screen
     var body: some View {
         VStack {
             Text("How to play Guess-A Car Brand Game:")

@@ -8,6 +8,7 @@
 import Foundation
 
 struct ModelData {
+    //Parses given json file and returns an array of car brands
     func loadJson(filename fileName: String) -> [carBrand]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: nil) {
             do {

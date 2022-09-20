@@ -11,6 +11,7 @@ struct CarData: Decodable {
     var carBrand: [carBrand]
 }
 
+//json decodable carBrand definition
 struct carBrand: Decodable {
     var name: String
     var difficulty: String

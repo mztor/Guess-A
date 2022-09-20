@@ -23,34 +23,35 @@ struct carBrandGame: View {
     @State private var showDetails = false
     @State private var result = false
     
-    let currentGuess = getCarBrand()
+    let currentGuess = getCarBrand() //Gets a random car brand
     
     // Is this how to do it?
     //for each carBrand in [carBrands] {
     //     loadView(carBrand)
     //}
     
-    var body: some View {
+    
+    //The view for displaying the game screen
+    
+    var body: some View {        
         VStack {
-            Image(currentGuess.img_guess)
+            Image(currentGuess.img_guess) //The image of the current guess
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
                 .overlay {
                     RoundedRectangle(cornerRadius: 2).stroke(.black, lineWidth: 4)
+                    //Makes the box around the image
                     
                 }
                 .padding()
-            
-            
-            
-                .toolbar {
+                .toolbar { //Adds the toolbar menu to the top of the screen
                     ToolbarItem {
                         HStack {
                             Text("EASY - Level \(level)")
                                 .font(.title)
                                 .padding()
-                            NavigationLink(destination: helpScreen(carBrand: currentGuess)) {
+                            NavigationLink(destination: helpScreen(carBrand: currentGuess)) { //Adds a help button that goes to helpScreen view
                                 Image(systemName: "questionmark.circle")
                                     .font(.largeTitle)
                             }
@@ -58,7 +59,7 @@ struct carBrandGame: View {
                     }
                 }
             HStack {
-                TextField("Enter Guess:", text: $guess)
+                TextField("Enter Guess:", text: $guess) //Text box for user to provide answer
                     .padding()
                     .frame(width: 200.0)
                     .overlay {
@@ -67,10 +68,10 @@ struct carBrandGame: View {
                     }
                     .padding()
                 
-                Button(action: {
-                    if (guess.caseInsensitiveCompare(currentGuess.name) == .orderedSame) {
+                Button(action: { //Button for user to submit their answer
+                    if (guess.caseInsensitiveCompare(currentGuess.name) == .orderedSame) { //Validation of answer
                         if (!result) {
-                            if (currentGuess.name.caseInsensitiveCompare(guess) != .orderedSame) {
+                            if (currentGuess.name.caseInsensitiveCompare(guess) != .orderedSame) { //Does not increment level for incorrect answer
                                 level = level + 1
                             }
                             result.toggle()
@@ -93,7 +94,7 @@ struct carBrandGame: View {
                         .cornerRadius(10)
                 }
             }
-            Button("Test Mode") {
+            Button("Test Mode") { //Allows for answer to appear for testing purposes
                 testDetails.toggle()
             }
             if testDetails {
@@ -117,6 +118,7 @@ struct carBrandGame_Previews: PreviewProvider {
     }
 }
 
+//Returns a random car brand from the array of available car brands
 func getCarBrand() -> carBrand {
     // todo: this needs work
     if carGuessVisible {

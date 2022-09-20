@@ -29,13 +29,6 @@
             "img_answer": "ferrari_ans"
         },
         {
-            "name": "Ford",
-            "difficulty": "easy",
-            "helpButtonDescription": "This brand was founded in The United States in 1903. They are known for making popular models such as the Mustang, Focus, and Ranger.",
-            "img_guess": "ford_guess",
-            "img_answer": "ford_ans"
-        },
-        {
             "name": "Chevrolet",
             "difficulty": "easy",
             "helpButtonDescription": "This brand was founded in Michigan, United States in 1911. They are known for making popular models such as the Silverado, Comaro, and Corvette.",

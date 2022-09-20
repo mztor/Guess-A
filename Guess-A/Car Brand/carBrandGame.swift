@@ -19,12 +19,16 @@ struct carBrandGame: View {
     @State private var testDetails = false
     @State var guess = ""
     var buttonGuess = ""
-    @State var other = ""
+    
     @State private var showDetails = false
     @State private var result = false
     
     let currentGuess = getCarBrand()
     
+    // Is this how to do it?
+    //for each carBrand in [carBrands] {
+    //     loadView(carBrand)
+    //}
     
     var body: some View {
         VStack {
@@ -45,6 +49,7 @@ struct carBrandGame: View {
                         HStack {
                             Text("EASY - Level \(level)")
                                 .font(.title)
+                                .padding()
                             NavigationLink(destination: helpScreen(carBrand: currentGuess)) {
                                 Image(systemName: "questionmark.circle")
                                     .font(.largeTitle)
@@ -53,7 +58,7 @@ struct carBrandGame: View {
                     }
                 }
             HStack {
-                TextField("Enter Guess:", text: $other)
+                TextField("Enter Guess:", text: $guess)
                     .padding()
                     .frame(width: 200.0)
                     .overlay {
@@ -63,9 +68,9 @@ struct carBrandGame: View {
                     .padding()
                 
                 Button(action: {
-                    if (other.caseInsensitiveCompare(currentGuess.name) == .orderedSame) {
+                    if (guess.caseInsensitiveCompare(currentGuess.name) == .orderedSame) {
                         if (!result) {
-                            if (currentGuess.name.caseInsensitiveCompare(other) != .orderedSame) {
+                            if (currentGuess.name.caseInsensitiveCompare(guess) != .orderedSame) {
                                 level = level + 1
                             }
                             result.toggle()
@@ -95,11 +100,12 @@ struct carBrandGame: View {
                 Text(currentGuess.name)
             }
             if result {
-                Text("Correct")
+                Text("Correct Guess, Well Done!")
             } else {
-                Text("False")
+                Text("Incorrect Guess, Try Again!")
             }
         }
+        .padding(.bottom, 20)
     }
 }
 

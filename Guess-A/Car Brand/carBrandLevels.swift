@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct carBrandLevels: View {
     var body: some View {
         VStack {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9579321128D9694B002DC2AE /* guessDogBreed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9579321028D9694B002DC2AE /* guessDogBreed.xcassets */; };
 		9582FDD628B8404700D9A3CE /* dogBreedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9582FDD528B8404700D9A3CE /* dogBreedGame.swift */; };
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9579321028D9694B002DC2AE /* guessDogBreed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = guessDogBreed.xcassets; sourceTree = "<group>"; };
 		9582FDD528B8404700D9A3CE /* dogBreedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dogBreedGame.swift; sourceTree = "<group>"; };
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				C0CC9A48286BF3D000FF74C6 /*  dogBreedLevels.swift */,
 				9582FDD528B8404700D9A3CE /* dogBreedGame.swift */,
+				9579321028D9694B002DC2AE /* guessDogBreed.xcassets */,
 			);
 			path = "Dog Breed";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9579321128D9694B002DC2AE /* guessDogBreed.xcassets in Resources */,
 				C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */,
 				C036653D2863DBC90096852E /* Assets.xcassets in Resources */,
 			);

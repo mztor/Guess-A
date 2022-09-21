@@ -21,7 +21,7 @@ struct ContentView: View {
                 NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }
                 
 
-                NavigationLink(destination: playingCardView()) {Text("Guess a Playing Card") }
+                NavigationLink(destination: playingCardLevels()) {Text("Guess a Playing Card") }
 
                 NavigationLink(
                     destination: pokemonLevels()) { Text("Guess a Pokemon") }
@@ -40,11 +40,13 @@ struct ContentView: View {
             .navigationTitle("Guess-A")
             
             .toolbar {
-                Button("help") {
+                Button() {
                     showHelp()
-                        }
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
             }
-
+            
         }
     }
 }

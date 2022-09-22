@@ -10,6 +10,7 @@ enum ActiveAlert{
     case correct, incorrect, gameCorrect, gameIncorrect
 }
 let answers = ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
+
 struct nbaTeamGame1_0: View {
     var level: String
     @State var finishViewNavigate = false

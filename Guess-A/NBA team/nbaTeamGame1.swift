@@ -12,7 +12,6 @@ enum ActiveAlert{
 let answers = ["Cleveland Cavaliers", "Boston Celtics", "Denver Nuggets", "Golden State Warriors", "Miami Heat", "Milwaukee Bucks", "Portland Trailblazers", "Atlanta Hawks"]
 struct nbaTeamGame1_0: View {
     var level: String
-    var finalPercentage =  (currentScore/maxScore)*100
     @State var finishViewNavigate = false
     @State private var showHelpCard = false
     @State private var correctA = false
@@ -34,10 +33,12 @@ struct nbaTeamGame1_0: View {
         }
         
             Button {
+                if guess == answers[randomNum1] {
+                    currentScore += 1
+                }
                 if guess == answers[randomNum1] && roundCount != 8{
                     correctA.toggle()
                     self.activeAlert = .correct
-                    currentScore += 1
                     roundCount = roundCount + 1
                 }
                 else if guess != answers[randomNum1] && roundCount != 8 {
@@ -51,7 +52,6 @@ struct nbaTeamGame1_0: View {
                             roundCount == 8
                 {
                     correctA.toggle()
-                    currentScore += 1
                     self.activeAlert = .gameCorrect
                 }
                 else if
@@ -85,9 +85,7 @@ struct nbaTeamGame1_0: View {
             case .gameCorrect:
                 return Alert(title: Text("Game is Finished"),
                     message:
-                    Text("Final Score is") +
-                    Text(String(finalPercentage)) +
-                    Text("%"),
+                Text("Final Score is " + String() + "%"),
                 dismissButton:
                 .default(Text("Ok"),
                          action: {finishViewNavigate.toggle()
@@ -97,9 +95,7 @@ struct nbaTeamGame1_0: View {
                 return Alert(title:
                     Text("Game is Finished"),
                     message:
-                    Text("Final Score is ") +
-                    Text(String(finalPercentage)) +
-                    Text("%"),
+                Text("Final Score is " + String(currentScore) + "%"),
                 dismissButton:
                 .default(Text("Ok"),
                 action: {finishViewNavigate.toggle()}

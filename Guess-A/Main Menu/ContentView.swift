@@ -21,15 +21,15 @@ struct ContentView: View {
                 NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }
                 
 
-                NavigationLink(destination: playingCardView()) {Text("Guess a Playing Card") }
+                NavigationLink(destination: playingCardLevels()) {Text("Guess a Playing Card") }
 
                 NavigationLink(
                     destination: pokemonLevels()) { Text("Guess a Pokémon") }
                 
                 NavigationLink(destination: marvelView()) { Text("Guess a Marvel Character") }
-                
-                NavigationLink(destination: carBrandView()) { Text("Guess a Car Brand") }
-                
+
+                NavigationLink(destination: carBrandLevels()) { Text("Guess a Car Brand") }
+
                 NavigationLink(destination: fruitView()) { Text("Guess a Fruit") }
                 
                 NavigationLink(destination: allBlacksPlayerView()) { Text("Guess a All Blacks Player") }
@@ -45,11 +45,13 @@ struct ContentView: View {
             .navigationTitle("Guess-A")
             
             .toolbar {
-                Button("help") {
+                Button() {
                     showHelp()
-                        }
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
             }
-
+            
         }
     }
 }

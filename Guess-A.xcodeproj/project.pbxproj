@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 
+		5E63EC4C2891F4F70069B734 /* marvelGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E63EC4B2891F4F70069B734 /* marvelGame.swift */; };
+		5EB4F4C328B77D8900BEA9AB /* guessAMarvelCharacter.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */; };
+
+
 		302256D728D74EA000B33915 /* carBrandDataUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = 302256D628D74E9F00B33915 /* carBrandDataUpdated.json */; };
 		302256D928D7F9EE00B33915 /* helpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302256D828D7F9EE00B33915 /* helpScreen.swift */; };
 		308E758F28D568860066EF2C /* carBrandGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E758E28D568860066EF2C /* carBrandGame.swift */; };
@@ -16,6 +20,7 @@
 
 		6279106028BAEA83000AECDD /* playingCardFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279105F28BAEA83000AECDD /* playingCardFinish.swift */; };
 		62ED91EE28A5CB16009CD3B0 /* playingCardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED91ED28A5CB16009CD3B0 /* playingCardGame.swift */; };
+
 
 		C03665392863DBC50096852E /* Guess_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03665382863DBC50096852E /* Guess_AApp.swift */; };
 		C036653B2863DBC50096852E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036653A2863DBC50096852E /* ContentView.swift */; };
@@ -38,7 +43,7 @@
 		C0CC9A45286BF3B200FF74C6 /* allBlacksPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */; };
 		C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A46286BF3C200FF74C6 /* letterView.swift */; };
 		C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */; };
-		C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */; };
+		C0CC9A4B286BF3DC00FF74C6 /*  marvelLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */; };
 		C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A59286C699B00FF74C6 /* numberGame.swift */; };
 		CB1463CA2891F2FD00FB1A2F /* pokemonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */; };
 		CB22E69C28988F6200E18F50 /* pokemonPokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22E69B28988F6200E18F50 /* pokemonPokedex.swift */; };
@@ -46,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		5E63EC4B2891F4F70069B734 /* marvelGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelGame.swift; sourceTree = "<group>"; };
+		5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = guessAMarvelCharacter.xcassets; sourceTree = "<group>"; };
+
 
 		302256D628D74E9F00B33915 /* carBrandDataUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carBrandDataUpdated.json; sourceTree = "<group>"; };
 		302256D828D7F9EE00B33915 /* helpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreen.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 
 		6279105F28BAEA83000AECDD /* playingCardFinish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playingCardFinish.swift; sourceTree = "<group>"; };
 		62ED91ED28A5CB16009CD3B0 /* playingCardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playingCardGame.swift; sourceTree = "<group>"; };
+
 
 		C03665352863DBC50096852E /* Guess-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03665382863DBC50096852E /* Guess_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess_AApp.swift; sourceTree = "<group>"; };
@@ -78,7 +88,7 @@
 		C0CC9A44286BF3B200FF74C6 /* allBlacksPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allBlacksPlayerView.swift; sourceTree = "<group>"; };
 		C0CC9A46286BF3C200FF74C6 /* letterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterView.swift; sourceTree = "<group>"; };
 		C0CC9A48286BF3D000FF74C6 /* dogBreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dogBreedView.swift; sourceTree = "<group>"; };
-		C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelView.swift; sourceTree = "<group>"; };
+		C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " marvelLevels.swift"; sourceTree = "<group>"; };
 		C0CC9A59286C699B00FF74C6 /* numberGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberGame.swift; sourceTree = "<group>"; };
 		CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonGame.swift; sourceTree = "<group>"; };
 		CB22E69B28988F6200E18F50 /* pokemonPokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonPokedex.swift; sourceTree = "<group>"; };
@@ -170,7 +180,9 @@
 		C0CC9A30286BF23500FF74C6 /* Marvel Character */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */,
+				C0CC9A4A286BF3DC00FF74C6 /*  marvelLevels.swift */,
+				5E63EC4B2891F4F70069B734 /* marvelGame.swift */,
+				5EB4F4C228B77D8900BEA9AB /* guessAMarvelCharacter.xcassets */,
 			);
 			path = "Marvel Character";
 			sourceTree = "<group>";
@@ -317,7 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03665402863DBC90096852E /* Preview Assets.xcassets in Resources */,
+
+				5EB4F4C328B77D8900BEA9AB /* guessAMarvelCharacter.xcassets in Resources */,
+
 				302256D728D74EA000B33915 /* carBrandDataUpdated.json in Resources */,
+
 				C036653D2863DBC90096852E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,8 +369,9 @@
 				C0CC9A3F286BF31700FF74C6 /* pokemonLevels.swift in Sources */,
 
 				C0CC9A49286BF3D000FF74C6 /* dogBreedView.swift in Sources */,
-				C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */,
+				C0CC9A4B286BF3DC00FF74C6 /*  marvelLevels.swift in Sources */,
 				C03665392863DBC50096852E /* Guess_AApp.swift in Sources */,
+				5E63EC4C2891F4F70069B734 /* marvelGame.swift in Sources */,
 				C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */,
 				C0CC9A43286BF3A300FF74C6 /* fruitView.swift in Sources */,
 				62ED91EE28A5CB16009CD3B0 /* playingCardGame.swift in Sources */,

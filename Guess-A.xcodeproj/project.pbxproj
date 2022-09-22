@@ -41,6 +41,8 @@
 		C0CC9A4B286BF3DC00FF74C6 /* marvelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */; };
 		C0CC9A5A286C699B00FF74C6 /* numberGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC9A59286C699B00FF74C6 /* numberGame.swift */; };
 		CB1463CA2891F2FD00FB1A2F /* pokemonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */; };
+		CB22E69C28988F6200E18F50 /* pokemonPokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22E69B28988F6200E18F50 /* pokemonPokedex.swift */; };
+		CB9BBE3F28AA42B4009D467D /* pokemonTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BBE3E28AA42B4009D467D /* pokemonTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		C0CC9A4A286BF3DC00FF74C6 /* marvelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelView.swift; sourceTree = "<group>"; };
 		C0CC9A59286C699B00FF74C6 /* numberGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberGame.swift; sourceTree = "<group>"; };
 		CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonGame.swift; sourceTree = "<group>"; };
+		CB22E69B28988F6200E18F50 /* pokemonPokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonPokedex.swift; sourceTree = "<group>"; };
+		CB9BBE3E28AA42B4009D467D /* pokemonTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,8 @@
 			children = (
 				C0CC9A3E286BF31700FF74C6 /* pokemonLevels.swift */,
 				CB1463C92891F2FD00FB1A2F /* pokemonGame.swift */,
+				CB22E69B28988F6200E18F50 /* pokemonPokedex.swift */,
+				CB9BBE3E28AA42B4009D467D /* pokemonTesting.swift */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -336,6 +342,8 @@
 				308E758F28D568860066EF2C /* carBrandGame.swift in Sources */,
 				C0CC9A47286BF3C200FF74C6 /* letterView.swift in Sources */,
 				C089E2EE286524480098AB23 /* numberLevels.swift in Sources */,
+				CB9BBE3F28AA42B4009D467D /* pokemonTesting.swift in Sources */,
+				CB22E69C28988F6200E18F50 /* pokemonPokedex.swift in Sources */,
 				C0A98C96286D6187006BC2FA /* ToolbarView.swift in Sources */,
 				C036653B2863DBC50096852E /* ContentView.swift in Sources */,
 

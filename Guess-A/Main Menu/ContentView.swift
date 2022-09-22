@@ -24,13 +24,18 @@ struct ContentView: View {
                 NavigationLink(destination: playingCardLevels()) {Text("Guess a Playing Card") }
 
                 NavigationLink(
-                    destination: pokemonLevels()) { Text("Guess a Pokemon") }
+                    destination: pokemonLevels()) { Text("Guess a Pokémon") }
                 
                 NavigationLink(destination: marvelView()) { Text("Guess a Marvel Character") }
+
                 NavigationLink(destination: carBrandLevels()) { Text("Guess a Car Brand") }
+
                 NavigationLink(destination: fruitView()) { Text("Guess a Fruit") }
+                
                 NavigationLink(destination: allBlacksPlayerView()) { Text("Guess a All Blacks Player") }
+                
                 NavigationLink(destination: letterView()) { Text("Guess a Letter") }
+                
                 NavigationLink(destination: dogBreedView()) { Text("Guess a Dog Breed") }
 
             }

@@ -15,35 +15,53 @@ struct ContentView: View {
             
             List{
 
-                NavigationLink(destination: numberView()) { Text("Guess a number") }
-                 
+                NavigationLink(destination: numberLevels()) { Text("Guess a number") }
+                
                    
                 NavigationLink(destination: nbaTeamView()) { Text("Guess a NBA team") }
                 
 
-                NavigationLink(destination: playingCardView()) {Text("Guess a Playing Card") }
+                NavigationLink(destination: playingCardLevels()) {Text("Guess a Playing Card") }
 
                 NavigationLink(
-                    destination: pokemonView()) { Text("Guess a Pokemon") }
+                    destination: pokemonLevels()) { Text("Guess a Pokémon") }
                 
+
+                NavigationLink(
+                    destination: marvelLevels()) { Text("Guess a Marvel Character") }
+                
+                //NavigationLink(destination: carBrandLevels()) { Text("Guess a Car Brand") }
+                
+
                 NavigationLink(destination: marvelView()) { Text("Guess a Marvel Character") }
-                NavigationLink(destination: carBrandView()) { Text("Guess a Car Brand") }
+
+                NavigationLink(destination: carBrandLevels()) { Text("Guess a Car Brand") }
+
+
                 NavigationLink(destination: fruitView()) { Text("Guess a Fruit") }
+                
                 NavigationLink(destination: allBlacksPlayerView()) { Text("Guess a All Blacks Player") }
+                
                 NavigationLink(destination: letterView()) { Text("Guess a Letter") }
+
                 NavigationLink(destination: dogBreedLevels()) { Text("Guess a Dog Breed") }
+
 
             }
             
 
 
             .navigationTitle("Guess-A")
-            .contentShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
+            .toolbar {
+                Button() {
+                    showHelp()
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
+            }
             
         }
-
-
     }
 }
 struct BlueButton: ButtonStyle {

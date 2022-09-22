@@ -1,20 +1,20 @@
 //
-//  playingCardView.swift
+//  pokemonGame.swift
 //  Guess-A
 //
-//  Created by Sarah Tor on 29/6/2022.
+//  Created by William Milne on 28/7/2022.
 //
 
 import SwiftUI
 
-struct playingCardView: View {
+struct pokemonGame: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct playingCardView_Previews: PreviewProvider {
+struct pokemonGame_Previews: PreviewProvider {
     static var previews: some View {
-        playingCardView()
+        pokemonGame()
     }
 }
